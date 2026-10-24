@@ -5,7 +5,6 @@
 <title>ELITE — Private Connections</title>
 <meta name="description" content="ELITE is a private, verified adult directory. Browse profiles and request access to contact details.">
 <style>
-/* ===== ALL CSS IS HERE ===== */
 :root{--bg:#0b0b0c;--panel:#141416;--panel2:#1c1b1a;--gold:#d7b56d;--gold2:#f0d79b;--muted:#a9a6a0;--line:#2d2a25;--white:#f8f5ee;--green:#6fcf97;--red:#ff8178}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#302617 0,transparent 36%),var(--bg);color:var(--white);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:0 22px}.top{border-bottom:1px solid #29251f;background:#0b0b0ceF;position:sticky;top:0;z-index:4;backdrop-filter:blur(12px)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:11px;font-size:22px;letter-spacing:.22em;font-weight:800}.mark{width:37px;height:37px;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;border-radius:11px;font-family:Georgia,serif;font-size:24px;letter-spacing:0;transform:rotate(-4deg)}.navlinks{display:flex;gap:25px;color:#d5d0c6;font-size:13px}.navlinks a:hover{color:var(--gold)}.btn{border:1px solid var(--gold);background:var(--gold);color:#17130b;padding:12px 17px;border-radius:6px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{background:var(--gold2)}.btn.ghost{background:transparent;color:var(--gold)}.btn.small{padding:8px 12px;font-size:12px}.hero{padding:75px 0 58px;display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:center;min-height:500px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.19em;font-size:11px;font-weight:800}.hero h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(44px,6vw,74px);line-height:1.02;letter-spacing:-.035em;font-weight:500;margin:18px 0}.hero h1 em{color:var(--gold);font-weight:400}.hero p{color:#c1bcb2;max-width:510px;font-size:16px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}.micro{font-size:11px;color:#8f8a80}.hero-art{min-height:390px;border:1px solid #4c3d25;border-radius:15px;position:relative;overflow:hidden;background:linear-gradient(145deg,#3d2e1c,#161313 55%,#6d5028);display:flex;align-items:end;padding:25px}.hero-art:before{content:"";position:absolute;width:255px;height:340px;right:14%;top:3%;border-radius:48% 48% 18% 18%;background:linear-gradient(130deg,#c9a56c,#4c3021 45%,#151112 75%);filter:drop-shadow(0 10px 35px #000);opacity:.86}.hero-art:after{content:"E";position:absolute;right:8%;top:0;font:italic 260px Georgia,serif;color:#f1d79c20}.art-label{z-index:1;position:relative;background:#0b0b0ce8;border:1px solid #66522f;border-radius:9px;padding:16px 18px;width:100%;display:flex;justify-content:space-between;gap:10px}.art-label strong{display:block;letter-spacing:.12em}.art-label span{font-size:12px;color:var(--gold)}.features{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line);padding:22px 0;margin-bottom:65px;gap:18px}.feature{display:flex;gap:13px;align-items:center}.ficon{width:42px;height:42px;display:grid;place-items:center;border:1px solid #57472d;color:var(--gold);border-radius:10px;font-size:19px}.feature b{display:block;font-size:13px}.feature span{font-size:11px;color:var(--muted)}section{padding:0 0 70px}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:25px}.section-head h2{font:500 35px Georgia,serif;margin:7px 0}.section-head p{color:var(--muted);margin:0;font-size:13px}.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}.filters input,.filters select,.field input,.field select,.field textarea{background:#111113;color:var(--white);border:1px solid #37332b;border-radius:6px;padding:11px 12px;outline:none;width:100%}.filters input{max-width:290px}.filters select{max-width:180px}.profiles{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.profile{border:1px solid #302b24;background:linear-gradient(180deg,#181719,#101012);border-radius:11px;overflow:hidden}.portrait{height:205px;position:relative;display:flex;align-items:end;padding:14px;background:linear-gradient(140deg,#634d35,#2a2020 48%,#111);overflow:hidden}.portrait:before{content:"";position:absolute;width:125px;height:160px;top:10px;left:calc(50% - 62px);border-radius:48% 48% 16% 16%;background:linear-gradient(135deg,#d7b887,#6b4431 50%,#241919);opacity:.92}.portrait:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0b0b0cf0,transparent 65%)}.portrait.p2{background:linear-gradient(145deg,#4b3438,#171316)}.portrait.p2:before{background:linear-gradient(135deg,#efc99b,#8b5448 50%,#1e1619);transform:scale(.94)}.portrait.p3{background:linear-gradient(145deg,#2e4a44,#121a18)}.portrait.p3:before{background:linear-gradient(135deg,#e0b28b,#744b39 50%,#191717)}.portrait.p4{background:linear-gradient(145deg,#5b4731,#1c1713)}.portrait.p4:before{background:linear-gradient(135deg,#f0c9a0,#a06d49 50%,#211819)}.verified{z-index:1;position:relative;font-size:10px;letter-spacing:.04em;color:#d5f3df;background:#193526;border:1px solid #35684b;border-radius:20px;padding:5px 8px}.profile-body{padding:15px}.profile-top{display:flex;justify-content:space-between;gap:7px;align-items:start}.profile h3{margin:0;font-size:16px}.location{font-size:11px;color:var(--muted);margin:3px 0 10px}.profile p{font-size:12px;color:#b6b0a6;min-height:36px;margin:0 0 14px}.profile .btn{width:100%;font-size:12px;padding:10px}.locknote{font-size:10px;color:#8e887e;text-align:center;margin-top:9px}.how{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.how article{padding:22px;border:1px solid var(--line);border-radius:10px;background:#121214}.num{font:32px Georgia,serif;color:var(--gold)}.how h3{font-size:15px;margin:10px 0}.how p{font-size:12px;color:var(--muted);margin:0}.footer{border-top:1px solid var(--line);padding:28px 0;color:#888279;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.modal{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;padding:18px;z-index:10}.modal.open{display:flex}.dialog{width:min(520px,100%);background:#151416;border:1px solid #4a3a22;border-radius:13px;padding:24px;max-height:90vh;overflow:auto}.dialog-head{display:flex;justify-content:space-between;align-items:start;gap:15px}.dialog h2{font:28px Georgia,serif;margin:5px 0 10px}.close{background:transparent;border:0;color:#ddd;font-size:24px}.field{margin:13px 0}.field label{display:block;color:#c9c2b5;font-size:12px;margin-bottom:6px}.field input[type=file]{font-size:12px}.hint{font-size:11px;color:var(--muted);margin:8px 0}.payment-numbers{background:#0c0c0d;border:1px solid var(--line);border-radius:8px;padding:13px;font-size:13px;line-height:1.9}.status{border-radius:5px;padding:5px 8px;font-size:11px;background:#4c3b16;color:#f0d79b}.notice{font-size:12px;border-left:2px solid var(--gold);padding:9px 12px;background:#211c14;color:#d6c8aa}.admin{display:none;padding:35px 0 70px}.admin.active{display:block}.admin-table{width:100%;border-collapse:collapse;font-size:12px}.admin-table th,.admin-table td{text-align:left;padding:12px;border-bottom:1px solid var(--line);vertical-align:top}.admin-table th{color:var(--gold);font-weight:600}.admin-actions{display:flex;gap:6px;flex-wrap:wrap}.tiny{font-size:11px;color:var(--muted)}.empty{padding:25px;border:1px dashed #51442d;border-radius:8px;color:var(--muted);text-align:center}.hidden{display:none!important}
 @media(max-width:850px){.hero{grid-template-columns:1fr;gap:28px;padding-top:50px}.hero-art{min-height:310px}.profiles{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}.features{grid-template-columns:1fr}.how{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}}
@@ -13,224 +12,31 @@
 </style>
 </head>
 <body>
-
-<!-- ===== HTML STRUCTURE ===== -->
-<header class="top">
-    <div class="wrap nav">
-        <a class="brand" href="#home"><span class="mark">E</span> ELITE</a>
-        <nav class="navlinks">
-            <a href="#profiles">Browse profiles</a>
-            <a href="#how">How it works</a>
-            <a href="#safety">Privacy & safety</a>
-        </nav>
-        <button class="btn small" onclick="openRegister()">Join ELITE Free</button>
-    </div>
-</header>
-
+<header class="top"><div class="wrap nav"><a class="brand" href="#home"><span class="mark">E</span> ELITE</a><nav class="navlinks"><a href="#profiles">Browse profiles</a><a href="#how">How it works</a><a href="#safety">Privacy & safety</a></nav><button class="btn small" onclick="openRegister()">Join ELITE Free</button></div></header>
 <main id="publicSite">
-    <div class="wrap">
-        <section class="hero" id="home">
-            <div>
-                <div class="eyebrow">A private members directory</div>
-                <h1>Private connections.<br><em>Premium access.</em></h1>
-                <p>Discover verified adult profiles in a more private, controlled directory. Browse for free, and become a member for K1000 to unlock contact details.</p>
-                <div class="actions">
-                    <a class="btn" href="#profiles">Explore profiles <span>↗</span></a>
-                    <button class="btn ghost" onclick="openRegister()">Create a profile (Free)</button>
-                </div>
-                <div class="micro">18+ only · Profile verification · Contact details stay locked until membership is approved</div>
-            </div>
-            <div class="hero-art">
-                <div class="art-label">
-                    <div><strong>ELITE MEMBERS DIRECTORY</strong><span>Private by design</span></div>
-                    <span>✦ VERIFIED PROFILES</span>
-                </div>
-            </div>
-        </section>
-
-        <div class="features" id="safety">
-            <div class="feature"><div class="ficon">◇</div><div><b>Verified profiles</b><span>Review and approval before publishing</span></div></div>
-            <div class="feature"><div class="ficon">▣</div><div><b>Controlled contact access</b><span>Contact details are not shown publicly</span></div></div>
-            <div class="feature"><div class="ficon">⌑</div><div><b>Payment review</b><span>Memberships happen only after confirmation</span></div></div>
-        </div>
-
-        <section id="profiles">
-            <div class="section-head">
-                <div>
-                    <div class="eyebrow">Discover</div>
-                    <h2>Featured profiles</h2>
-                    <p>Browse sample cards. Real profiles will appear after the platform is connected to its database.</p>
-                </div>
-                <span class="status">Members directory</span>
-            </div>
-            
-            <div class="filters">
-                <input id="search" placeholder="Search profiles…" oninput="filterProfiles()">
-                <select id="area" onchange="filterProfiles()">
-                    <option value="">All areas</option>
-                    <option>Lusaka</option>
-                    <option>Kitwe</option>
-                    <option>Ndola</option>
-                </select>
-            </div>
-            
-            <div class="profiles" id="profileGrid"></div>
-            <p class="micro" style="margin-top:14px">Demo profiles are illustrative placeholders, not real people. Do not use these sample cards as real listings.</p>
-        </section>
-
-        <section id="how">
-            <div class="eyebrow">Simple by design</div>
-            <h2 style="font:500 35px Georgia,serif;margin:7px 0 24px">How ELITE works</h2>
-            <div class="how">
-                <article>
-                    <div class="num">01</div>
-                    <h3>Browse profiles</h3>
-                    <p>View public profile information and approved photos without seeing private contact details.</p>
-                </article>
-                <article>
-                    <div class="num">02</div>
-                    <h3>Become a Member</h3>
-                    <p>Pay a one-time K1000 membership fee using MTN Money or Airtel Money, then submit the transaction reference.</p>
-                </article>
-                <article>
-                    <div class="num">03</div>
-                    <h3>Wait for verification</h3>
-                    <p>Your membership remains Pending until an authorized administrator confirms the K1000 was received. Approved members get access to contact details.</p>
-                </article>
-            </div>
-        </section>
-    </div>
-</main>
-
-<!-- ADMIN PANEL -->
-<section class="admin" id="adminPanel">
-    <div class="wrap">
-        <div class="section-head">
-            <div>
-                <div class="eyebrow">Restricted area</div>
-                <h2>Admin payment review</h2>
-                <p>Prototype review queue. Production needs server-side authentication and a database.</p>
-            </div>
-            <button class="btn ghost small" onclick="showPublic()">← Back to website</button>
-        </div>
-        <div class="notice">Prototype only: submissions are stored in this browser for demonstration. Do not use this local-only panel to handle real payments or sensitive data.</div>
-        <div style="overflow:auto;margin-top:18px">
-            <table class="admin-table">
-                <thead>
-                    <tr><th>Submitted</th><th>Customer / package</th><th>Network & reference</th><th>Proof</th><th>Status</th><th>Actions</th></tr>
-                </thead>
-                <tbody id="paymentRows"></tbody>
-            </table>
-        </div>
-        <div id="noPayments" class="empty">No demo payment submissions yet.</div>
-        <div style="margin-top:24px">
-            <h3>Admin access</h3>
-            <p class="tiny">This prototype does not have real authentication. The production admin login must be secured on the server, not with a password embedded in the page.</p>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="wrap footer-inner">
-        <span>© <span id="year"></span> ELITE. Private Connections. Premium Access.</span>
-        <span>Adults 18+ only · Privacy · Terms · Safety & reporting</span>
-        <a href="#admin" onclick="showAdmin();return false">Admin preview</a>
-    </div>
-</footer>
-
-<!-- PAYMENT & REGISTRATION MODAL -->
-<div class="modal" id="paymentModal" role="dialog" aria-modal="true">
-    <div class="dialog">
-        <div class="dialog-head">
-            <div>
-                <div class="eyebrow">Secure access request</div>
-                <h2 id="modalTitle">Unlock contact</h2>
-            </div>
-            <button class="close" onclick="closeModal()" aria-label="Close">×</button>
-        </div>
-        <p id="modalDesc" class="tiny">Submit your payment details for administrator review.</p>
-        
-        <form id="paymentForm">
-            <input type="hidden" id="packageType">
-            <input type="hidden" id="profileId">
-            
-            <div id="paymentDetailsWrap">
-                <div class="payment-numbers">
-                    <b>Pay to: Mumba Sampa</b><br>
-                    MTN Money: <b>0960168307</b><br>
-                    Airtel Money: <b>0972154889</b><br>
-                    <span class="tiny">Check the recipient name and amount before sending.</span>
-                </div>
-            </div>
-            
-            <div class="field">
-                <label for="customerName">Your name or account email</label>
-                <input id="customerName" required maxlength="100" placeholder="Name or email">
-            </div>
-            
-            <div id="networkWrap">
-                <div class="field">
-                    <label for="network">Payment network</label>
-                    <select id="network" required>
-                        <option value="">Choose network</option>
-                        <option>MTN Money</option>
-                        <option>Airtel Money</option>
-                    </select>
-                </div>
-                <div class="field">
-                    <label for="transactionRef">Transaction reference</label>
-                    <input id="transactionRef" required maxlength="100" placeholder="Enter reference from receipt">
-                </div>
-                <div class="field">
-                    <label for="proof">Payment screenshot (optional in demo)</label>
-                    <input id="proof" type="file" accept="image/*">
-                    <div class="hint">For a live site, proof uploads must be stored privately with size/type checks.</div>
-                </div>
-            </div>
-            
-            <div class="notice">Submitting creates a Pending request. A screenshot alone does not confirm payment. Your access will remain locked until the payment is checked against the actual mobile-money account.</div>
-            
-            <div style="display:flex;gap:10px;margin-top:17px">
-                <button class="btn" type="submit" style="flex:1">Submit for review</button>
-                <button class="btn ghost" type="button" onclick="closeModal()">Cancel</button>
-            </div>
-        </form>
-        
-        <div id="formSuccess" class="hidden">
-            <div class="notice" style="margin-top:16px">Your request has been recorded as <b>PENDING</b> in this demo. No contact has been unlocked.</div>
-            <button class="btn" style="margin-top:15px;width:100%" onclick="closeModal()">Done</button>
-        </div>
-    </div>
-</div>
-
-<!-- ===== ALL JAVASCRIPT IS HERE ===== -->
+<div class="wrap"><section class="hero" id="home"><div><div class="eyebrow">A private members directory</div><h1>Private connections.<br><em>Premium access.</em></h1><p>Discover verified adult profiles in a more private, controlled directory. Browse for free, and become a member for K1000 to unlock contact details.</p><div class="actions"><a class="btn" href="#profiles">Explore profiles <span>↗</span></a><button class="btn ghost" onclick="openRegister()">Create a profile (Free)</button></div><div class="micro">18+ only · Profile verification · Contact details stay locked until membership is approved</div></div><div class="hero-art"><div class="art-label"><div><strong>ELITE MEMBERS DIRECTORY</strong><span>Private by design</span></div><span>✦ VERIFIED PROFILES</span></div></div></section>
+<div class="features" id="safety"><div class="feature"><div class="ficon">◇</div><div><b>Verified profiles</b><span>Review and approval before publishing</span></div></div><div class="feature"><div class="ficon">▣</div><div><b>Controlled contact access</b><span>Contact details are not shown publicly</span></div></div><div class="feature"><div class="ficon">⌑</div><div><b>Payment review</b><span>Memberships happen only after confirmation</span></div></div></div>
+<section id="profiles"><div class="section-head"><div><div class="eyebrow">Discover</div><h2>Featured profiles</h2><p>Browse sample cards. Real profiles will appear after the platform is connected to its database.</p></div><span class="status">Members directory</span></div><div class="filters"><input id="search" placeholder="Search profiles…" oninput="filterProfiles()"><select id="area" onchange="filterProfiles()"><option value="">All areas</option><option>Lusaka</option><option>Kitwe</option><option>Ndola</option></select></div><div class="profiles" id="profileGrid"></div><p class="micro" style="margin-top:14px">Demo profiles are illustrative placeholders, not real people. Do not use these sample cards as real listings.</p></section>
+<section id="how"><div class="eyebrow">Simple by design</div><h2 style="font:500 35px Georgia,serif;margin:7px 0 24px">How ELITE works</h2><div class="how"><article><div class="num">01</div><h3>Browse profiles</h3><p>View public profile information and approved photos without seeing private contact details.</p></article><article><div class="num">02</div><h3>Become a Member</h3><p>Pay a one-time K1000 membership fee using MTN Money or Airtel Money, then submit the transaction reference.</p></article><article><div class="num">03</div><h3>Wait for verification</h3><p>Your membership remains Pending until an authorized administrator confirms the K1000 was received. Approved members get access to contact details.</p></article></div></section>
+</div></main>
+<section class="admin" id="adminPanel"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Restricted area</div><h2>Admin payment review</h2><p>Payments submitted from the website will appear here.</p></div><button class="btn ghost small" onclick="showPublic()">← Back to website</button></div><div style="overflow:auto;margin-top:18px"><table class="admin-table"><thead><tr><th>Submitted</th><th>Customer / package</th><th>Network & reference</th><th>Status</th><th>Actions</th></tr></thead><tbody id="paymentRows"></tbody></table></div><div id="noPayments" class="empty">No payment submissions yet.</div></div></section>
+<footer class="footer"><div class="wrap footer-inner"><span>© <span id="year"></span> ELITE. Private Connections. Premium Access.</span><span>Adults 18+ only · Privacy · Terms · Safety & reporting</span><a href="#admin" onclick="showAdmin();return false">Admin preview</a></div></footer>
+<div class="modal" id="paymentModal" role="dialog" aria-modal="true"><div class="dialog"><div class="dialog-head"><div><div class="eyebrow">Secure access request</div><h2 id="modalTitle">Unlock contact</h2></div><button class="close" onclick="closeModal()" aria-label="Close">×</button></div><p id="modalDesc" class="tiny">Submit your payment details for administrator review.</p><form id="paymentForm"><input type="hidden" id="packageType"><input type="hidden" id="profileId"><div id="paymentDetailsWrap"><div class="payment-numbers"><b>Pay to: Mumba Sampa</b><br>MTN Money: <b>0960168307</b><br>Airtel Money: <b>0972154889</b><br><span class="tiny">Check the recipient name and amount before sending.</span></div></div><div class="field"><label for="customerName">Your name or account email</label><input id="customerName" required maxlength="100" placeholder="Name or email"></div><div id="networkWrap"><div class="field"><label for="network">Payment network</label><select id="network" required><option value="">Choose network</option><option>MTN Money</option><option>Airtel Money</option></select></div><div class="field"><label for="transactionRef">Transaction reference</label><input id="transactionRef" required maxlength="100" placeholder="Enter reference from receipt"></div><div class="field"><label for="proof">Payment screenshot (optional in demo)</label><input id="proof" type="file" accept="image/*"><div class="hint">For a live site, proof uploads must be stored privately with size/type checks.</div></div></div><div class="notice">Submitting creates a Pending request. A screenshot alone does not confirm payment. Your access will remain locked until the payment is checked against the actual mobile-money account.</div><div style="display:flex;gap:10px;margin-top:17px"><button class="btn" type="submit" style="flex:1">Submit for review</button><button class="btn ghost" type="button" onclick="closeModal()">Cancel</button></div></form><div id="formSuccess" class="hidden"><div class="notice" style="margin-top:16px">Your request has been recorded as <b>PENDING</b> in the database.</div><button class="btn" style="margin-top:15px;width:100%" onclick="closeModal()">Done</button></div></div></div>
 <script>
-const demoProfiles=[
-    {id:'demo-1',name:'Amara',area:'Lusaka',tag:'Verified sample',desc:'Profile description and availability details will appear here.',style:'',fee:1000},
-    {id:'demo-2',name:'Zara',area:'Lusaka',tag:'Verified sample',desc:'Profile description and availability details will appear here.',style:'p2',fee:1000},
-    {id:'demo-3',name:'Sasha',area:'Ndola',tag:'Verified sample',desc:'Profile description and availability details will appear here.',style:'p3',fee:1000},
-    {id:'demo-4',name:'Tasha',area:'Kitwe',tag:'Verified sample',desc:'Profile description and availability details will appear here.',style:'p4',fee:1000}
-];
+const BACKEND_URL = 'https://elite-flcq.onrender.com';
 
-let chosenProfile=null;
-const $=id=>document.getElementById(id);
+const demoProfiles=[
+{id:'demo-1',name:'Amara',area:'Lusaka',tag:'Verified sample',desc:'Profile description and availability details will appear here.',style:'',fee:1000},
+{id:'demo-2',name:'Zara',area:'Lusaka',tag:'Verified sample',desc:'Profile description and availability details will appear here.',style:'p2',fee:1000},
+{id:'demo-3',name:'Sasha',area:'Ndola',tag:'Verified sample',desc:'Profile description and availability details will appear here.',style:'p3',fee:1000},
+{id:'demo-4',name:'Tasha',area:'Kitwe',tag:'Verified sample',desc:'Profile description and availability details will appear here.',style:'p4',fee:1000}
+];
+let chosenProfile=null;const $=id=>document.getElementById(id);
 
 function renderProfiles(){
     const q=$('search').value.toLowerCase(),area=$('area').value;
     const list=demoProfiles.filter(p=>(!q||p.name.toLowerCase().includes(q)||p.area.toLowerCase().includes(q))&&(!area||p.area===area));
-    $('profileGrid').innerHTML=list.map(p=>`
-        <article class="profile">
-            <div class="portrait ${p.style}"><span class="verified">✓ ${p.tag}</span></div>
-            <div class="profile-body">
-                <div class="profile-top"><h3>${p.name}</h3><span class="tiny">18+</span></div>
-                <div class="location">⌖ ${p.area}, Zambia</div>
-                <p>${p.desc}</p>
-                <button class="btn" onclick="openPayment('${p.id}')">Become a Member · K1000</button>
-                <div class="locknote">▣ WhatsApp / Telegram locked</div>
-            </div>
-        </article>
-    `).join('')||'<div class="empty">No matching sample profiles.</div>';
+    $('profileGrid').innerHTML=list.map(p=>`<article class="profile"><div class="portrait ${p.style}"><span class="verified">✓ ${p.tag}</span></div><div class="profile-body"><div class="profile-top"><h3>${p.name}</h3><span class="tiny">18+</span></div><div class="location">⌖ ${p.area}, Zambia</div><p>${p.desc}</p><button class="btn" onclick="openPayment('${p.id}')">Become a Member · K1000</button><div class="locknote">▣ WhatsApp / Telegram locked</div></div></article>`).join('')||'<div class="empty">No matching sample profiles.</div>'
 }
 
 function filterProfiles(){renderProfiles()}
@@ -240,12 +46,9 @@ function openRegister(){
     $('packageType').value='registration';
     $('profileId').value='';
     $('modalTitle').textContent='Create a Profile';
-    $('modalDesc').textContent='Registration is completely FREE. This demo records a pending request only.';
-    
-    // Hide payment details for registration
+    $('modalDesc').textContent='Registration is completely FREE. Submit your details below.';
     $('paymentDetailsWrap').classList.add('hidden');
     $('networkWrap').classList.add('hidden');
-    
     $('paymentModal').classList.add('open');
     $('paymentForm').classList.remove('hidden');
     $('formSuccess').classList.add('hidden');
@@ -256,100 +59,111 @@ function openPayment(id){
     $('packageType').value='membership';
     $('profileId').value=id;
     $('modalTitle').textContent='Become a Member';
-    $('modalDesc').textContent='One-time membership fee: K1000. Approval is manual. Once approved, you can unlock contact details.';
-    
-    // Show payment details for membership
+    $('modalDesc').textContent='One-time membership fee: K1000. Approval is manual.';
     $('paymentDetailsWrap').classList.remove('hidden');
     $('networkWrap').classList.remove('hidden');
-    
     $('paymentModal').classList.add('open');
     $('paymentForm').classList.remove('hidden');
     $('formSuccess').classList.add('hidden');
 }
 
-function closeModal(){
-    $('paymentModal').classList.remove('open')
-}
+function closeModal(){$('paymentModal').classList.remove('open')}
 
 $('paymentForm').addEventListener('submit',async e=>{
     e.preventDefault();
-    const file=$('proof').files[0];
-    let proofName='No screenshot attached';
-    if(file)proofName=file.name;
-    
     const isReg = $('packageType').value === 'registration';
     
-    const row={
-        id:Date.now().toString(),
-        created:new Date().toLocaleString(),
-        name:$('customerName').value.trim(),
-        type:isReg ? 'Lady Registration' : 'Membership',
-        profile:chosenProfile?chosenProfile.name:'Profile Registration',
-        amount:isReg?0:1000,
-        network:isReg?'N/A':$('network').value,
-        ref:isReg?'Free Registration':$('transactionRef').value.trim(),
-        proof:proofName,
-        status:isReg?'Approved (Free)':'Pending'
+    const payload = {
+        name: $('customerName').value.trim(),
+        type: isReg ? 'Lady Registration' : 'Membership',
+        profile: chosenProfile ? chosenProfile.name : 'New Lady',
+        amount: isReg ? 0 : 1000,
+        network: isReg ? 'N/A' : $('network').value,
+        ref: isReg ? 'Free Registration' : $('transactionRef').value.trim(),
     };
-    
-    const rows=JSON.parse(localStorage.getItem('eliteDemoPayments')||'[]');
-    rows.unshift(row);
-    localStorage.setItem('eliteDemoPayments',JSON.stringify(rows));
-    $('paymentForm').classList.add('hidden');
-    $('formSuccess').classList.remove('hidden')
+
+    try {
+        const response = await fetch(`${BACKEND_URL}/api/payments`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            $('paymentForm').classList.add('hidden');
+            $('formSuccess').classList.remove('hidden');
+        } else {
+            alert('Error saving payment. Please try again.');
+        }
+    } catch (err) {
+        console.error(err);
+        alert('Network error. Could not connect to the server.');
+    }
 });
 
-function showAdmin(){ 
+async function showAdmin(){
     $('publicSite').classList.add('hidden');
     $('adminPanel').classList.add('active');
-    renderPayments();
-    window.scrollTo(0,0)
+    window.scrollTo(0,0);
+    await renderPayments();
 }
 
 function showPublic(){
     $('adminPanel').classList.remove('active');
     $('publicSite').classList.remove('hidden');
-    window.scrollTo(0,0)
+    window.scrollTo(0,0);
 }
 
-function renderPayments(){
-    const rows=JSON.parse(localStorage.getItem('eliteDemoPayments')||'[]');
-    $('paymentRows').innerHTML=rows.map(r=>`
-        <tr>
-            <td>${escapeHtml(r.created)}</td>
-            <td>${escapeHtml(r.name)}<br><span class="tiny">${escapeHtml(r.profile)} · K${r.amount}</span></td>
-            <td>${escapeHtml(r.network)}<br><span class="tiny">${escapeHtml(r.ref)}</span></td>
-            <td>${escapeHtml(r.proof)}</td>
-            <td><span class="status">${escapeHtml(r.status)}</span></td>
-            <td>
-                <div class="admin-actions">
-                    <button class="btn small" onclick="demoDecision('${r.id}','Approved')">Approve demo</button>
-                    <button class="btn ghost small" onclick="demoDecision('${r.id}','Rejected')">Reject</button>
-                </div>
-            </td>
-        </tr>
-    `).join('');
-    $('noPayments').classList.toggle('hidden',rows.length>0)
+async function renderPayments(){
+    try {
+        const response = await fetch(`${BACKEND_URL}/api/payments`);
+        const rows = await response.json();
+        
+        $('paymentRows').innerHTML = rows.map(r=>`
+            <tr>
+                <td>${new Date(r.created_at).toLocaleString()}</td>
+                <td>${escapeHtml(r.name)}<br><span class="tiny">${escapeHtml(r.profile)} · K${r.amount}</span></td>
+                <td>${escapeHtml(r.network)}<br><span class="tiny">${escapeHtml(r.reference)}</span></td>
+                <td><span class="status">${escapeHtml(r.status)}</span></td>
+                <td>
+                    <div class="admin-actions">
+                        <button class="btn small" onclick="updateStatus('${r.id}', 'Approved')">Approve</button>
+                        <button class="btn ghost small" onclick="updateStatus('${r.id}', 'Rejected')">Reject</button>
+                    </div>
+                </td>
+            </tr>
+        `).join('');
+        
+        $('noPayments').classList.toggle('hidden', rows.length > 0);
+    } catch (err) {
+        console.error(err);
+        $('noPayments').textContent = "Error loading payments. Check backend connection.";
+    }
 }
 
-function demoDecision(id,status){
-    const rows=JSON.parse(localStorage.getItem('eliteDemoPayments')||'[]');
-    const i=rows.findIndex(r=>r.id===id);
-    if(i<0)return;
-    rows[i].status=status;
-    localStorage.setItem('eliteDemoPayments',JSON.stringify(rows));
-    renderPayments();
-    alert('Demo status changed to '+status+'. This does not unlock a real contact.');
+async function updateStatus(id, status){
+    try {
+        const response = await fetch(`${BACKEND_URL}/api/payments/${id}/status`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status })
+        });
+        
+        if (response.ok) {
+            await renderPayments();
+            alert(`Payment marked as ${status}`);
+        } else {
+            alert('Failed to update status');
+        }
+    } catch (err) {
+        console.error(err);
+        alert('Network error updating status');
+    }
 }
 
-function escapeHtml(v){
-    return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))
-}
-
+function escapeHtml(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 $('year').textContent=new Date().getFullYear();
 renderProfiles();
 $('paymentModal').addEventListener('click',e=>{if(e.target===$('paymentModal'))closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-</script>
-</body>
-</html>
+</script></body></html>
