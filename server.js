@@ -13,12 +13,31 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false }
 });
 
-// Test route to make sure it works
+// THIS IS THE NEW PART: Create the table automatically on startup
+const createTableQuery = `
+CREATE TABLE IF NOT EXISTS payments (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    type VARCHAR(50),
+    profile VARCHAR(100),
+    amount INTEGER,
+    network VARCHAR(50),
+    reference VARCHAR(100),
+    status VARCHAR(20) DEFAULT 'Pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+`;
+
+pool.query(createTableQuery)
+  .then(() => console.log("Table 'payments' is ready."))
+  .catch(err => console.error("Error creating table:", err));
+
+// Test route
 app.get('/', (req, res) => {
   res.send('ELITE Backend is running!');
 });
 
-// Route: Submit a payment (From the frontend)
+// Route: Submit a payment
 app.post('/api/payments', async (req, res) => {
     try {
         const { name, type, profile, amount, network, ref } = req.body;
