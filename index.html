@@ -1,169 +1,590 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ELITE — Private Connections. Premium Access.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite | Private Connections</title>
+<meta name="theme-color" content="#08090b">
+<meta name="description" content="Elite — Private Connections. Premium Access.">
+
 <style>
-:root{--bg:#0b0b0c;--panel:#141416;--gold:#d7b56d;--gold2:#f0d79b;--muted:#a9a6a0;--line:#2d2a25;--white:#f8f5ee;--green:#6fcf97}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#302617 0,transparent 36%),var(--bg);color:var(--white);font:15px/1.5 Inter,system-ui,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:0 22px}.top{border-bottom:1px solid #29251f;background:#0b0b0ceF;position:sticky;top:0;z-index:4;backdrop-filter:blur(12px)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:11px;font-size:22px;letter-spacing:.22em;font-weight:800}.mark{width:37px;height:37px;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;border-radius:11px;font-family:Georgia,serif;font-size:24px;transform:rotate(-4deg)}.navlinks{display:flex;gap:25px;color:#d5d0c6;font-size:13px}.navlinks a:hover{color:var(--gold)}.btn{border:1px solid var(--gold);background:var(--gold);color:#17130b;padding:12px 17px;border-radius:6px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{background:var(--gold2)}.btn.ghost{background:transparent;color:var(--gold)}.btn.small{padding:8px 12px;font-size:12px}.hero{padding:75px 0 58px;display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:center}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.19em;font-size:11px;font-weight:800}.hero h1{font-family:Georgia,serif;font-size:clamp(44px,6vw,74px);line-height:1.02;letter-spacing:-.035em;font-weight:500;margin:18px 0}.hero h1 em{color:var(--gold);font-weight:400}.hero p{color:#c1bcb2;max-width:510px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}.micro{font-size:11px;color:#8f8a80}.hero-art{min-height:390px;border:1px solid #4c3d25;border-radius:15px;position:relative;overflow:hidden;background:linear-gradient(145deg,#3d2e1c,#161313 55%,#6d5028);display:flex;align-items:end;padding:25px}.hero-art:before{content:"";position:absolute;width:255px;height:340px;right:14%;top:3%;border-radius:48% 48% 18% 18%;background:linear-gradient(130deg,#c9a56c,#4c3021 45%,#151112 75%);opacity:.86}.hero-art:after{content:"E";position:absolute;right:8%;top:0;font:italic 260px Georgia,serif;color:#f1d79c20}.art-label{position:relative;background:#0b0b0ce8;border:1px solid #66522f;border-radius:9px;padding:16px;width:100%;display:flex;justify-content:space-between}.features{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line);padding:22px 0;margin-bottom:65px;gap:18px}.feature{display:flex;gap:13px;align-items:center}.ficon{width:42px;height:42px;display:grid;place-items:center;border:1px solid #57472d;color:var(--gold);border-radius:10px;font-size:19px}.feature b{display:block;font-size:13px}.feature span{font-size:11px;color:var(--muted)}section{padding:0 0 70px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.section-head h2{font:500 35px Georgia,serif;margin:7px 0}.section-head p{color:var(--muted);font-size:13px}.profiles{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.profile{border:1px solid #302b24;background:linear-gradient(180deg,#181719,#101012);border-radius:11px;overflow:hidden}.portrait{height:205px;background-size:cover;background-position:center;position:relative;display:flex;align-items:end;padding:14px}.verified{font-size:10px;color:#d5f3df;background:#193526;border:1px solid #35684b;border-radius:20px;padding:5px 8px;position:relative}.pending{color:#f7d7a0;background:#352d19;border:1px solid #685435}.profile-body{padding:15px}.profile h3{margin:0;font-size:16px}.location{font-size:11px;color:var(--muted);margin:3px 0 10px}.profile p{font-size:12px;color:#b6b0a6;margin:0 0 14px}.profile .btn{width:100%;font-size:12px;padding:10px}.locknote{font-size:10px;color:#8e887e;text-align:center;margin-top:9px}.how{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.how article{padding:22px;border:1px solid var(--line);border-radius:10px;background:#121214}.num{font:32px Georgia,serif;color:var(--gold)}.modal{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;padding:18px;z-index:10}.modal.open{display:flex}.dialog{width:min(520px,100%);background:#151416;border:1px solid #4a3a22;border-radius:13px;padding:24px;max-height:90vh;overflow:auto}.dialog-head{display:flex;justify-content:space-between}.close{background:transparent;border:0;color:#ddd;font-size:24px}.field{margin:13px 0}.field label{display:block;color:#c9c2b5;font-size:12px;margin-bottom:6px}.field input,.field select{background:#111113;color:var(--white);border:1px solid #37332b;border-radius:6px;padding:11px;outline:none;width:100%}.payment-numbers{background:#0c0c0d;border:1px solid var(--line);border-radius:8px;padding:13px}.notice{font-size:12px;border-left:2px solid var(--gold);padding:9px 12px;background:#211c14;color:#d6c8aa}.empty{padding:25px;border:1px dashed #51442d;border-radius:8px;color:var(--muted);text-align:center}.hidden{display:none!important}.admin{display:none;padding:35px 0}.admin.active{display:block}.admin-table{width:100%;border-collapse:collapse;font-size:12px}.admin-table th,.admin-table td{text-align:left;padding:12px;border-bottom:1px solid var(--line)}
-@media(max-width:850px){.hero{grid-template-columns:1fr}.profiles{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}.features,.how{grid-template-columns:1fr}}
+:root {
+  --bg: #08090b;
+  --panel: #111214;
+  --gold: #e9bd68;
+  --gold-light: #f7d990;
+  --white: #f8f5ef;
+  --muted: #b7b4b0;
+  --border: #34302a;
+  --green: #238b58;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--white); font-family: Arial, Helvetica, sans-serif; }
+a { text-decoration: none; color: inherit; }
+button { font: inherit; cursor: pointer; }
+.container { width: min(1350px, 92%); margin: auto; }
+
+/* HEADER */
+header { background: #090a0c; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 20; }
+.navbar { min-height: 90px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--gold); flex-shrink: 0; }
+.brand-mark { font-size: 43px; line-height: 1; }
+.brand-name { font-family: Georgia, serif; font-size: 32px; letter-spacing: 8px; }
+.brand-tagline { font-size: 9px; letter-spacing: 2px; margin-top: 5px; white-space: nowrap; }
+.nav-links { display: flex; align-items: center; gap: 30px; font-size: 13px; }
+.nav-links a:hover { color: var(--gold); }
+.nav-actions { display: flex; gap: 12px; }
+.btn { border: 1px solid var(--gold); padding: 13px 25px; border-radius: 30px; display: inline-flex; justify-content: center; align-items: center; gap: 10px; font-size: 13px; font-weight: bold; transition: .2s; }
+.btn-gold { background: linear-gradient(135deg, #f5d58b, #dfad51); color: #15110a; border-color: transparent; }
+.btn-outline { background: transparent; color: var(--white); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 5px 20px #e9bd6820; }
+.menu-toggle { display: none; background: none; color: var(--gold); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; }
+
+/* HERO */
+.hero { min-height: 385px; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); background: linear-gradient(90deg, rgba(5,5,5,.97) 0%, rgba(5,5,5,.82) 36%, rgba(5,5,5,.12) 66%, rgba(5,5,5,.88) 100%), url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1800&q=85") center 35% / cover no-repeat; }
+.hero-inner { min-height: 385px; display: grid; grid-template-columns: 1.25fr 1fr .7fr; align-items: center; gap: 25px; padding-top: 20px; padding-bottom: 20px; }
+.hero-copy { max-width: 540px; }
+.hero-brand { color: var(--gold); font-family: Georgia, serif; font-size: 42px; letter-spacing: 9px; margin-bottom: 6px; }
+.hero-tagline { font-size: 11px; letter-spacing: 3px; color: var(--gold-light); margin-bottom: 20px; }
+h1 { font: bold 39px/1.08 Georgia, serif; margin: 0 0 14px; }
+.hero-copy p { font-size: 14px; line-height: 1.6; color: #e0dedb; max-width: 450px; }
+.hero-buttons { display: flex; gap: 14px; margin-top: 22px; flex-wrap: wrap; }
+.trust-list { justify-self: end; width: 220px; }
+.trust-item { display: flex; gap: 15px; align-items: center; padding: 19px 0; border-bottom: 1px solid #ffffff12; }
+.trust-icon { color: var(--gold); font-size: 28px; width: 36px; text-align: center; }
+.trust-item strong { font-size: 13px; }
+.trust-item p { font-size: 12px; color: #ccc; margin-bottom: 0; }
+
+/* HOW IT WORKS */
+.steps { border-bottom: 1px solid var(--border); padding: 24px 0; }
+.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.step { display: flex; align-items: center; gap: 14px; }
+.step-icon { border: 1px solid #b79554; color: var(--gold); width: 51px; height: 51px; min-width: 51px; border-radius: 50%; display: grid; place-items: center; font-size: 23px; }
+.step strong { font-size: 13px; }
+.step p { color: var(--muted); font-size: 11px; line-height: 1.5; margin-bottom: 0; }
+
+/* FEATURED PROFILES */
+.featured { padding: 32px 0 55px; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.section-heading h2 { font: bold 30px Georgia, serif; margin: 0; }
+.view-all { font-size: 12px; color: var(--gold-light); }
+.featured-layout { display: grid; grid-template-columns: minmax(0, 1fr) 275px; gap: 38px; align-items: start; }
+.profile-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.profile-card { border: 1px solid #373737; border-radius: 9px; overflow: hidden; background: #0c0d0f; transition: transform .2s, border-color .2s; }
+.profile-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+.profile-image { height: 190px; position: relative; background: #222; }
+.profile-image img { height: 100%; width: 100%; object-fit: cover; display: block; }
+.verified { position: absolute; right: 8px; top: 9px; background: var(--green); color: white; padding: 5px 8px; font-size: 10px; border-radius: 15px; }
+.location { position: absolute; bottom: 0; width: 100%; padding: 22px 10px 8px; background: linear-gradient(transparent, #000d); font-size: 12px; }
+.profile-info { padding: 12px; }
+.profile-info h3 { margin: 0 0 8px; font: bold 19px Georgia, serif; }
+.profile-info h3 span { font: normal 14px Arial, sans-serif; color: #c5c1bb; margin-left: 5px; }
+.profile-info p { font-size: 12px; color: var(--muted); min-height: 30px; line-height: 1.5; }
+.profile-button { width: 100%; border: 1px solid #c8a568; border-radius: 22px; padding: 11px 5px; color: var(--gold-light); background: transparent; font-size: 12px; margin-top: 5px; }
+.profile-button:hover { background: var(--gold); color: #111; }
+
+/* ACCOUNT PANEL */
+.account-panel { border: 1px solid #343434; border-radius: 10px; padding: 24px; background: linear-gradient(145deg, #151618, #0e0f11); }
+.account-panel h3 { font: bold 18px Georgia, serif; margin: 0 0 8px; }
+.account-panel p { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.account-panel .btn { width: 100%; margin: 7px 0 18px; }
+.account-panel hr { border: 0; border-top: 1px solid var(--border); margin: 4px 0 20px; }
+.secure-note { text-align: center; font-size: 11px; color: var(--muted); padding: 18px 0; }
+
+/* HOW IT WORKS DETAILS */
+.details { padding: 45px 0; background: #101113; border-top: 1px solid var(--border); }
+.details h2 { font: 30px Georgia, serif; text-align: center; }
+.details-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 28px; }
+.detail-box { border: 1px solid var(--border); padding: 22px; border-radius: 10px; }
+.detail-box h3 { color: var(--gold); font-size: 16px; }
+.detail-box p { color: var(--muted); font-size: 13px; line-height: 1.7; }
+footer { border-top: 1px solid var(--border); padding: 25px 0; color: var(--muted); font-size: 12px; }
+.footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+footer a:hover { color: var(--gold); }
+
+/* MODAL */
+.modal { display: none; position: fixed; inset: 0; z-index: 50; background: #000c; align-items: center; justify-content: center; padding: 20px; }
+.modal.active { display: flex; }
+.modal-content { background: #121315; border: 1px solid var(--gold); border-radius: 14px; padding: 28px; width: min(400px, 100%); max-height: 90vh; overflow-y: auto; }
+.modal-content h2 { font: 27px Georgia, serif; color: var(--gold); margin-top: 0; }
+.modal-content input, .modal-content select { display: block; width: 100%; padding: 13px; margin: 12px 0; border-radius: 7px; border: 1px solid var(--border); background: #090a0c; color: white; }
+.modal-content .btn { width: 100%; }
+.close-modal { float: right; background: transparent; color: white; border: 0; font-size: 24px; cursor: pointer; }
+
+/* ADMIN */
+.admin-panel { display: none; padding: 40px 0; min-height: 80vh; }
+.admin-panel.active { display: block; }
+.admin-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+.admin-table th, .admin-table td { border-bottom: 1px solid var(--border); padding: 12px; text-align: left; font-size: 13px; }
+.admin-table th { color: var(--gold); }
+.admin-btn { padding: 6px 12px; border-radius: 4px; border: none; font-size: 11px; font-weight: bold; cursor: pointer; margin-right: 5px; }
+.btn-approve { background: var(--green); color: white; }
+.btn-reject { background: #8b2323; color: white; }
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .nav-links { gap: 14px; }
+  .brand-name { font-size: 27px; }
+  .brand-tagline { font-size: 8px; }
+  .hero-inner { grid-template-columns: 1.2fr 1fr .7fr; }
+  h1 { font-size: 34px; }
+  .profile-grid { grid-template-columns: repeat(2, 1fr); }
+  .profile-image { height: 230px; }
+}
+@media (max-width: 760px) {
+  .navbar { min-height: 76px; flex-wrap: wrap; padding: 12px 0; }
+  .brand-mark { font-size: 35px; }
+  .brand-name { font-size: 23px; letter-spacing: 5px; }
+  .brand-tagline { font-size: 7px; letter-spacing: 1px; }
+  .menu-toggle { display: block; }
+  .nav-links { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; order: 3; }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 13px 4px; border-top: 1px solid var(--border); }
+  .nav-actions { margin-left: auto; }
+  .nav-actions .btn { padding: 10px 13px; font-size: 12px; }
+  .hero { background: linear-gradient(90deg, #08090bf0, #08090b99), url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80") center / cover no-repeat; }
+  .hero-inner { display: block; padding-top: 35px; padding-bottom: 30px; }
+  .hero-brand { font-size: 33px; }
+  .hero-tagline { font-size: 9px; letter-spacing: 2px; }
+  h1 { font-size: 36px; }
+  .hero-copy p { font-size: 13px; }
+  .trust-list { width: 100%; display: grid; grid-template-columns: 1fr; margin-top: 20px; }
+  .trust-item { padding: 11px 0; }
+  .trust-item p { margin-top: 5px; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 22px 12px; }
+  .step { align-items: flex-start; }
+  .step-icon { width: 43px; height: 43px; min-width: 43px; font-size: 20px; }
+  .step strong { font-size: 12px; }
+  .featured-layout { grid-template-columns: 1fr; gap: 25px; }
+  .profile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .profile-image { height: 210px; }
+  .profile-info { padding: 10px; }
+  .profile-info h3 { font-size: 17px; }
+  .section-heading h2 { font-size: 25px; }
+  .account-panel { max-width: 100%; }
+  .details-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 390px) {
+  .brand { gap: 6px; }
+  .brand-name { font-size: 19px; }
+  .brand-tagline { font-size: 6px; }
+  .nav-actions { gap: 6px; }
+  .nav-actions .btn { padding: 9px 10px; }
+  .profile-image { height: 170px; }
+  .profile-info h3 { font-size: 15px; }
+  .profile-info p { font-size: 11px; }
+  .profile-button { font-size: 11px; }
+}
 </style>
 </head>
+
 <body>
-<header class="top"><div class="wrap nav"><a class="brand" href="#home"><span class="mark">E</span> ELITE</a><nav class="navlinks"><a href="#profiles">Browse profiles</a><a href="#how">How it works</a></nav><button class="btn small" onclick="openRegister()">Join ELITE Free</button></div></header>
-<main id="publicSite">
-<div class="wrap">
-<section class="hero" id="home"><div><div class="eyebrow">A private members directory</div><h1>Private connections.<br><em>Premium access.</em></h1><p>Discover verified adult profiles in a more private, controlled directory. Browse for free, and become a member for K1000 to unlock contact details.</p><div class="actions"><a class="btn" href="#profiles">Explore profiles <span>↗</span></a><button class="btn ghost" onclick="openRegister()">Create a profile (Free)</button></div><div class="micro">18+ only · Profile verification · Contact details stay locked until membership is approved</div></div><div class="hero-art"><div class="art-label"><div><strong>ELITE MEMBERS DIRECTORY</strong><span>Private by design</span></div><span>VERIFIED PROFILES</span></div></div></section>
-<div class="features"><div class="feature"><div class="ficon">◇</div><div><b>Verified profiles</b><span>Review and approval before publishing</span></div></div><div class="feature"><div class="ficon">▣</div><div><b>Controlled contact access</b><span>Contact details are not shown publicly</span></div></div><div class="feature"><div class="ficon">⌑</div><div><b>Payment review</b><span>Memberships happen only after confirmation</span></div></div></div>
-<section id="profiles"><div class="section-head"><div><div class="eyebrow">Discover</div><h2>Featured profiles</h2><p>Browse our verified members. Join today to create your profile.</p></div></div><div class="profiles" id="profileGrid"></div></section>
-<section id="how"><div class="eyebrow">Simple by design</div><h2 style="font:500 35px Georgia,serif;margin:7px 0 24px">How ELITE works</h2><div class="how"><article><div class="num">01</div><h3>Browse profiles</h3><p>View public profile information without seeing private contact details.</p></article><article><div class="num">02</div><h3>Become a Member</h3><p>Pay a one-time K1000 membership fee using MTN Money or Airtel Money.</p></article><article><div class="num">03</div><h3>Wait for verification</h3><p>Your membership application is Pending. Once verified, your access is granted.</p></article></div></section>
-</div></main>
 
-<section class="admin" id="adminPanel"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Restricted area</div><h2>Admin review</h2></div><button class="btn ghost small" onclick="showPublic()">← Back</button></div><div style="overflow:auto"><table class="admin-table"><thead><tr><th>Submitted</th><th>Details</th><th>Status</th><th>Actions</th></tr></thead><tbody id="paymentRows"></tbody></table></div><div id="noPayments" class="empty">No submissions yet.</div></div></section>
-
-<div class="modal" id="paymentModal">
-    <div class="dialog">
-        <div class="dialog-head"><div><div class="eyebrow">Secure access request</div><h2 id="modalTitle">Unlock contact</h2></div><button class="close" onclick="closeModal()">×</button></div>
-        <p id="modalDesc" class="tiny">Submit your details below.</p>
-        
-        <form id="paymentForm">
-            <div id="paymentDetailsWrap"><div class="payment-numbers"><b>Pay to: Mumba Sampa</b><br>MTN Money: <b>0960168307</b><br>Airtel Money: <b>0972154889</b></div></div>
-            
-            <div id="registrationFields" class="hidden">
-                <div class="field"><label>Full Name</label><input id="regName" placeholder="Enter your full name"></div>
-                <div class="field"><label>Age</label><input id="regAge" type="number" min="18" placeholder="Must be 18+"></div>
-                <div class="field"><label>Location</label><input id="regLocation" placeholder="e.g. Lusaka"></div>
-                <div class="field"><label>WhatsApp Number</label><input id="regWhatsApp" placeholder="e.g. 2609XXXXXXXX"></div>
-                <div class="field"><label>Telegram Username</label><input id="regTelegram" placeholder="@username"></div>
-                <div class="field"><label>Profile Photo (For Verification)</label><input id="regPhoto" type="file" accept="image/*" required></div>
-            </div>
-
-            <div id="networkWrap">
-                <div class="field"><label>Your name or email</label><input id="customerName" placeholder="Name"></div>
-                <div class="field"><label>Payment network</label><select id="network"><option value="">Choose</option><option>MTN Money</option><option>Airtel Money</option></select></div>
-                <div class="field"><label>Transaction reference</label><input id="transactionRef" placeholder="Receipt number"></div>
-            </div>
-            
-            <div class="notice" id="modalNotice">Submitting creates a Pending request.</div>
-            
-            <div style="display:flex;gap:10px;margin-top:17px"><button class="btn" type="submit" style="flex:1">Submit</button><button class="btn ghost" type="button" onclick="closeModal()">Cancel</button></div>
-        </form>
-        
-        <div id="formSuccess" class="hidden"><div class="notice" style="margin-top:16px">Request recorded as <b>PENDING</b>.</div><button class="btn" style="margin-top:15px;width:100%" onclick="closeModal()">Done</button></div>
+<header>
+  <div class="container navbar">
+    <a href="#home" class="brand">
+      <span class="brand-mark">♛</span>
+      <div>
+        <div class="brand-name">ELITE</div>
+        <div class="brand-tagline">PRIVATE CONNECTIONS. PREMIUM ACCESS.</div>
+      </div>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#profiles">Browse</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#safety">Safety &amp; Privacy</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-outline" onclick="openModal('login')">Login</button>
+      <button class="btn btn-gold" onclick="openModal('register')">Register</button>
     </div>
+  </div>
+</header>
+
+<main id="publicSite">
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="hero-brand">♛ ELITE</div>
+      <div class="hero-tagline">PRIVATE CONNECTIONS. PREMIUM ACCESS.</div>
+      <h1>Discover Amazing People in Your City</h1>
+      <p>Elite is a members-only platform where verified individuals connect. Browse profiles, unlock contacts, and take the next step at your own pace.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-gold" href="#profiles">Browse Profiles &nbsp; →</a>
+        <a class="btn btn-outline" href="#how-it-works">How It Works</a>
+      </div>
+    </div>
+    <div></div>
+    <div class="trust-list">
+      <div class="trust-item">
+        <div class="trust-icon">♢</div>
+        <div><strong>Verified Profiles</strong><p>Real people, real photos.</p></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">♙</div>
+        <div><strong>Your Privacy Matters</strong><p>Secure &amp; discreet.</p></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">♛</div>
+        <div><strong>Exclusive Access</strong><p>Only serious members.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="how-it-works">
+  <div class="container steps-grid">
+    <div class="step">
+      <div class="step-icon">♙</div>
+      <div><strong>1. Join as a Lady</strong><p>Register for free and get verified.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-icon">⌕</div>
+      <div><strong>2. Browse Profiles</strong><p>Men can view verified profiles for free.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-icon">♙</div>
+      <div><strong>3. Become a Member</strong><p>Pay K1000 membership to unlock contacts.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-icon">▤</div>
+      <div><strong>4. Communicate &amp; Arrange</strong><p>Connect respectfully and make arrangements.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="featured container" id="profiles">
+  <div class="section-heading">
+    <h2>Featured Ladies</h2>
+    <a href="#profiles" class="view-all">View All →</a>
+  </div>
+  <div class="featured-layout">
+    <div class="profile-grid" id="profileGrid">
+      <!-- Profiles injected by JS here -->
+    </div>
+    <aside>
+      <div class="account-panel">
+        <h3>Already a Member?</h3>
+        <p>Login to access your account and manage your profile.</p>
+        <button class="btn btn-gold" onclick="openModal('login')">Login</button>
+        <hr>
+        <h3>New Here?</h3>
+        <p>Create your account and join our exclusive community.</p>
+        <button class="btn btn-gold" onclick="openModal('register')">Register</button>
+      </div>
+      <div class="secure-note">♢ &nbsp; 100% Secure &amp; Discreet</div>
+    </aside>
+  </div>
+</section>
+
+<section class="details" id="safety">
+  <div class="container">
+    <h2>Your Privacy Comes First</h2>
+    <div class="details-grid">
+      <div class="detail-box">
+        <h3>✓ Profile Verification</h3>
+        <p>Profiles are reviewed by an administrator before receiving a verified badge. Verification must be genuine.</p>
+      </div>
+      <div class="detail-box">
+        <h3>♙ Protected Contact Details</h3>
+        <p>Contact information is only released after authorization and successful payment verification.</p>
+      </div>
+      <div class="detail-box">
+        <h3>♢ Member Privacy</h3>
+        <p>Members control their profile visibility and understand how their personal information is used.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ADMIN PANEL (Hidden by default) -->
+<section class="admin-panel container" id="adminPanel">
+    <div class="section-heading">
+        <h2>Admin Verification</h2>
+        <button class="btn btn-outline" onclick="closeAdmin()">Back to Site</button>
+    </div>
+    <p style="color:var(--muted); font-size:13px;">Approve payments and verify lady registrations.</p>
+    <div style="overflow-x:auto;">
+        <table class="admin-table">
+            <thead>
+                <tr><th>Date</th><th>Name</th><th>Type</th><th>Photo</th><th>Status</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="adminTableBody"></tbody>
+        </table>
+    </div>
+</section>
+
+<footer id="contact">
+  <div class="container footer-inner">
+    <div>
+      <strong style="color:var(--gold);letter-spacing:4px">ELITE</strong>
+      <p>Private Connections. Premium Access.</p>
+    </div>
+    <div>
+      <a href="#safety">Privacy</a> &nbsp; | &nbsp;
+      <a href="#safety">Safety</a> &nbsp; | &nbsp;
+      <a href="mailto:support@elite.example">Contact</a> &nbsp; | &nbsp;
+      <a href="#" onclick="openAdmin(); return false;">Admin</a>
+    </div>
+    <div>© <span id="year"></span> Elite. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-content">
+    <button class="close-modal" onclick="closeModal()">×</button>
+    <h2 id="modalTitle">Welcome to Elite</h2>
+    
+    <form id="dynamicForm">
+      <!-- LOGIN / PAYMENT FIELDS -->
+      <div id="formStandard">
+        <input type="text" id="inputName" placeholder="Your name or email" required>
+        
+        <div id="membershipPaymentFields" style="display:none;">
+          <p style="font-size:12px; color:var(--gold); margin:10px 0;">Pay K1000 to: Mumba Sampa<br>MTN: 0960168307<br>Airtel: 0972154889</p>
+          <select id="inputNetwork" required>
+            <option value="">Select Payment Network</option>
+            <option value="MTN">MTN Money</option>
+            <option value="Airtel">Airtel Money</option>
+          </select>
+          <input type="text" id="inputRef" placeholder="Transaction Reference" required>
+        </div>
+      </div>
+
+      <!-- REGISTRATION FIELDS (Ladies) -->
+      <div id="formRegistration" style="display:none;">
+        <input type="text" id="regName" placeholder="Full Name" required>
+        <input type="number" id="regAge" placeholder="Age (18+)" min="18" required>
+        <input type="text" id="regLocation" placeholder="Location (e.g. Lusaka)" required>
+        <input type="tel" id="regWhatsApp" placeholder="WhatsApp Number" required>
+        <input type="text" id="regTelegram" placeholder="Telegram Username (Optional)">
+        <label style="font-size:12px; color:var(--muted); display:block; margin-top:12px;">Upload Profile Photo (Required for verification)</label>
+        <input type="file" id="regPhoto" accept="image/*" required>
+      </div>
+
+      <button type="submit" class="btn btn-gold" id="submitBtn" style="margin-top:15px;">Continue</button>
+    </form>
+    <p id="modalMessage" style="font-size:11px; margin-top:15px; text-align:center; color:var(--green);"></p>
+  </div>
 </div>
 
 <script>
 const BACKEND_URL = 'https://elite-flcq.onrender.com';
-let profiles = [];
-const $=id=>document.getElementById(id);
+let currentMode = 'login'; // 'login', 'register', 'view_profile'
 
-// Fetch profiles from database on load
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Mobile Menu
+document.getElementById("menuToggle").addEventListener("click", () => {
+  document.getElementById("navLinks").classList.toggle("open");
+});
+document.querySelectorAll("#navLinks a").forEach(link => {
+  link.addEventListener("click", () => document.getElementById("navLinks").classList.remove("open"));
+});
+
+// Fetch and Render Real Profiles from Database
 async function loadProfiles() {
+    const grid = document.getElementById('profileGrid');
+    grid.innerHTML = '<p style="color:var(--muted); font-size:14px;">Loading profiles...</p>';
+    
     try {
-        const response = await fetch(`${BACKEND_URL}/api/payments`);
-        const rows = await response.json();
-        // Filter to only show LADIES (not membership payments)
-        profiles = rows.filter(r => r.type === 'Lady Registration' && r.status === 'Approved');
-        renderProfiles();
-    } catch (err) { console.error("Failed to load profiles", err); }
-}
+        const res = await fetch(`${BACKEND_URL}/api/payments`);
+        const data = await res.json();
+        
+        // Filter: Only Approved Lady Registrations
+        const approvedLadies = data.filter(row => row.type === 'Lady Registration' && row.status === 'Approved');
+        
+        if (approvedLadies.length === 0) {
+            grid.innerHTML = '<p style="color:var(--muted); font-size:14px; padding:20px;">No verified profiles available yet. Register today to be the first!</p>';
+            return;
+        }
 
-function renderProfiles(){
-    $('profileGrid').innerHTML = profiles.map(p=>`
-        <article class="profile">
-            <div class="portrait" style="background-image: url('${p.image_url || ''}');">
+        grid.innerHTML = approvedLadies.map(lady => `
+            <article class="profile-card">
+              <div class="profile-image">
+                <img src="${lady.image_url || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'}" alt="Profile">
                 <span class="verified">✓ Verified</span>
-            </div>
-            <div class="profile-body">
-                <div class="profile-top"><h3>${p.name}</h3></div>
-                <div class="location">${p.profile} · Zambia</div>
-                <p>Availability details coming soon.</p>
-                <button class="btn" onclick="openPayment()">Become a Member · K1000</button>
-                <div class="locknote">Contact details locked</div>
-            </div>
-        </article>
-    `).join('') || '<div class="empty">No profiles available yet. Join today to create your profile.</div>';
+                <div class="location">⌖ ${lady.profile || 'Lusaka'}</div>
+              </div>
+              <div class="profile-info">
+                <h3>${lady.name} <span>${lady.age || '25'}</span></h3>
+                <p>Available for premium companionship.</p>
+                <button class="profile-button" onclick="openPayment('${lady.name}')">Unlock Contact - K1000 →</button>
+              </div>
+            </article>
+        `).join('');
+    } catch (err) {
+        grid.innerHTML = '<p style="color:red;">Failed to load profiles. Server waking up...</p>';
+    }
 }
 
-function openRegister(){
-    $('modalTitle').textContent='Create a Profile';
-    $('modalDesc').textContent='Registration is FREE. Submit details for verification.';
-    $('paymentDetailsWrap').classList.add('hidden'); $('networkWrap').classList.add('hidden'); $('registrationFields').classList.remove('hidden');
-    $('modalTitle').setAttribute('data-type', 'registration');
-    $('paymentModal').classList.add('open'); $('paymentForm').classList.remove('hidden'); $('formSuccess').classList.add('hidden');
+// Modal Control
+function openModal(mode) {
+  currentMode = mode;
+  document.getElementById('modal').classList.add('active');
+  document.getElementById('modalMessage').textContent = '';
+  
+  const standardFields = document.getElementById('formStandard');
+  const regFields = document.getElementById('formRegistration');
+  const payFields = document.getElementById('membershipPaymentFields');
+  const title = document.getElementById('modalTitle');
+  const btn = document.getElementById('submitBtn');
+
+  standardFields.style.display = 'block';
+  regFields.style.display = 'none';
+  payFields.style.display = 'none';
+
+  if (mode === 'login') {
+    title.textContent = "Welcome Back";
+    btn.textContent = "Login";
+  } else if (mode === 'register') {
+    title.textContent = "Join as a Lady (Free)";
+    standardFields.style.display = 'none';
+    regFields.style.display = 'block';
+    btn.textContent = "Submit Registration";
+  } else if (mode === 'view_profile') {
+    title.textContent = "Become a Member";
+    btn.textContent = "Submit Payment";
+    payFields.style.display = 'block';
+  }
 }
 
-function openPayment(){
-    $('modalTitle').textContent='Become a Member';
-    $('modalDesc').textContent='One-time membership fee: K1000.';
-    $('paymentDetailsWrap').classList.remove('hidden'); $('networkWrap').classList.remove('hidden'); $('registrationFields').classList.add('hidden');
-    $('modalTitle').setAttribute('data-type', 'membership');
-    $('paymentModal').classList.add('open'); $('paymentForm').classList.remove('hidden'); $('formSuccess').classList.add('hidden');
+function openPayment(ladyName) {
+    openModal('view_profile');
+    document.getElementById('modalMessage').textContent = `To contact ${ladyName}, you must become a member.`;
 }
 
-function closeModal(){$('paymentModal').classList.remove('open')}
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+  document.getElementById('dynamicForm').reset();
+}
 
-// Handle Submit (Using FormData for file uploads)
-$('paymentForm').addEventListener('submit', async e=>{
+// Handle Form Submission
+document.getElementById('dynamicForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-    const isReg = $('modalTitle').getAttribute('data-type') === 'registration';
+    const btn = document.getElementById('submitBtn');
+    const msg = document.getElementById('modalMessage');
+    btn.textContent = "Processing...";
+    btn.disabled = true;
+
     const formData = new FormData();
 
-    if (isReg) {
-        formData.append('name', $('regName').value);
+    if (currentMode === 'register') {
+        formData.append('name', document.getElementById('regName').value);
         formData.append('type', 'Lady Registration');
-        formData.append('profile', $('regLocation').value);
+        formData.append('profile', document.getElementById('regLocation').value);
         formData.append('amount', 0);
         formData.append('network', 'N/A');
         formData.append('ref', 'Free');
-        if ($('regPhoto').files[0]) formData.append('proof', $('regPhoto').files[0]);
-    } else {
-        formData.append('name', $('customerName').value);
+        formData.append('age', document.getElementById('regAge').value); // Sending age for display
+        
+        const photoFile = document.getElementById('regPhoto').files[0];
+        if (photoFile) formData.append('proof', photoFile);
+
+    } else if (currentMode === 'view_profile') {
+        formData.append('name', document.getElementById('inputName').value);
         formData.append('type', 'Membership');
         formData.append('profile', 'Membership Access');
         formData.append('amount', 1000);
-        formData.append('network', $('network').value);
-        formData.append('ref', $('transactionRef').value);
+        formData.append('network', document.getElementById('inputNetwork').value);
+        formData.append('ref', document.getElementById('inputRef').value);
+    } else {
+        // Login mockup
+        msg.style.color = "var(--gold)";
+        msg.textContent = "Login feature coming soon.";
+        btn.textContent = "Login";
+        btn.disabled = false;
+        return;
     }
 
     try {
-        const response = await fetch(`${BACKEND_URL}/api/payments`, { method: 'POST', body: formData });
-        if (response.ok) {
-            $('paymentForm').classList.add('hidden'); $('formSuccess').classList.remove('hidden');
-            loadProfiles(); // Refresh profiles if a new one was added
-        } else { alert('Error. Try again.'); }
-    } catch (err) { alert('Network error.'); }
+        const res = await fetch(`${BACKEND_URL}/api/payments`, {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (res.ok) {
+            msg.style.color = "var(--green)";
+            msg.textContent = "Submitted successfully! Status is PENDING until approved by Admin.";
+            document.getElementById('dynamicForm').reset();
+            if (currentMode === 'register') loadProfiles();
+        } else {
+            throw new Error("Failed");
+        }
+    } catch (err) {
+        msg.style.color = "red";
+        msg.textContent = "Error. Server may be waking up. Try again.";
+    } finally {
+        btn.textContent = "Continue";
+        btn.disabled = false;
+    }
 });
 
-async function showAdmin(){ $('publicSite').classList.add('hidden'); $('adminPanel').classList.add('active'); await renderPayments(); }
-function showPublic(){ $('adminPanel').classList.remove('active'); $('publicSite').classList.remove('hidden'); }
+// ADMIN FUNCTIONS
+async function openAdmin() {
+    document.getElementById('publicSite').style.display = 'none';
+    document.getElementById('adminPanel').classList.add('active');
+    window.scrollTo(0,0);
+    await loadAdminData();
+}
 
-async function renderPayments(){
+function closeAdmin() {
+    document.getElementById('adminPanel').classList.remove('active');
+    document.getElementById('publicSite').style.display = 'block';
+    loadProfiles();
+}
+
+async function loadAdminData() {
+    const tbody = document.getElementById('adminTableBody');
+    tbody.innerHTML = '<tr><td colspan="6">Loading...</td></tr>';
+    
     try {
-        const response = await fetch(`${BACKEND_URL}/api/payments`);
-        const rows = await response.json();
-        $('paymentRows').innerHTML = rows.map(r=>`
+        const res = await fetch(`${BACKEND_URL}/api/payments`);
+        const data = await res.json();
+        
+        tbody.innerHTML = data.map(row => `
             <tr>
-                <td>${new Date(r.created_at).toLocaleString()}</td>
-                <td>${r.name}<br><span class="tiny">${r.profile} · K${r.amount}</span><br><a href="${r.image_url||'#'}" target="_blank">${r.image_url?'View Photo':'No Photo'}</a></td>
-                <td><span class="status">${r.status}</span></td>
-                <td><button class="btn small" onclick="updateStatus('${r.id}', 'Approved')">Approve</button><button class="btn ghost small" onclick="updateStatus('${r.id}', 'Rejected')">Reject</button></td>
+                <td>${new Date(row.created_at).toLocaleDateString()}</td>
+                <td>${row.name}</td>
+                <td>${row.type}</td>
+                <td>${row.image_url ? `<a href="${row.image_url}" target="_blank" style="color:var(--gold)">View Photo</a>` : 'None'}</td>
+                <td><span style="color:${row.status === 'Approved' ? 'var(--green)' : row.status === 'Rejected' ? 'red' : 'orange'}">${row.status}</span></td>
+                <td>
+                    <button class="admin-btn btn-approve" onclick="updateStatus('${row.id}', 'Approved')">Approve</button>
+                    <button class="admin-btn btn-reject" onclick="updateStatus('${row.id}', 'Rejected')">Reject</button>
+                </td>
             </tr>
         `).join('');
-        $('noPayments').classList.toggle('hidden', rows.length > 0);
-    } catch (err) { $('noPayments').textContent = "Error loading payments."; }
+        
+        if(data.length === 0) tbody.innerHTML = '<tr><td colspan="6">No submissions yet.</td></tr>';
+    } catch (err) {
+        tbody.innerHTML = '<tr><td colspan="6" style="color:red">Error loading data.</td></tr>';
+    }
 }
 
-async function updateStatus(id, status){
+async function updateStatus(id, newStatus) {
     try {
         await fetch(`${BACKEND_URL}/api/payments/${id}/status`, {
-            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ status })
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: newStatus })
         });
-        await renderPayments();
-        loadProfiles(); // Update the homepage immediately
-    } catch (err) { alert('Failed to update.'); }
+        await loadAdminData(); // Refresh table
+    } catch (err) {
+        alert("Failed to update status.");
+    }
 }
 
+// Initial Load
 loadProfiles();
-</script></body></html>
+</script>
+
+</body>
+</html>
