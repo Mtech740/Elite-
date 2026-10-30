@@ -104,24 +104,23 @@ footer { border-top: 1px solid var(--border); padding: 25px 0; color: var(--mute
 .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 footer a:hover { color: var(--gold); }
 
-/* MODAL */
+/* MODALS */
 .modal { display: none; position: fixed; inset: 0; z-index: 50; background: #000c; align-items: center; justify-content: center; padding: 20px; }
 .modal.active { display: flex; }
-.modal-content { background: #121315; border: 1px solid var(--gold); border-radius: 14px; padding: 28px; width: min(400px, 100%); max-height: 90vh; overflow-y: auto; }
-.modal-content h2 { font: 27px Georgia, serif; color: var(--gold); margin-top: 0; }
+.modal-content { background: #121315; border: 1px solid var(--gold); border-radius: 14px; padding: 28px; width: min(420px, 100%); max-height: 90vh; overflow-y: auto; position: relative; }
+.modal-content h2 { font: 27px Georgia, serif; color: var(--gold); margin-top: 0; margin-bottom: 10px; }
+.modal-content p { font-size: 12px; color: var(--muted); margin-bottom: 15px; }
 .modal-content input, .modal-content select { display: block; width: 100%; padding: 13px; margin: 12px 0; border-radius: 7px; border: 1px solid var(--border); background: #090a0c; color: white; }
-.modal-content .btn { width: 100%; }
-.close-modal { float: right; background: transparent; color: white; border: 0; font-size: 24px; cursor: pointer; }
+.modal-content .btn { width: 100%; margin-top: 10px; }
+.close-modal { position: absolute; top: 15px; right: 15px; background: transparent; color: white; border: 0; font-size: 24px; cursor: pointer; }
 
-/* ADMIN */
-.admin-panel { display: none; padding: 40px 0; min-height: 80vh; }
-.admin-panel.active { display: block; }
-.admin-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-.admin-table th, .admin-table td { border-bottom: 1px solid var(--border); padding: 12px; text-align: left; font-size: 13px; }
+/* ADMIN PANEL */
+#adminPanel { display: none; padding: 40px 0; background: #090a0c; min-height: 80vh; }
+#adminPanel.active { display: block; }
+.admin-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 20px; }
+.admin-table th, .admin-table td { text-align: left; padding: 12px; border-bottom: 1px solid var(--border); }
 .admin-table th { color: var(--gold); }
-.admin-btn { padding: 6px 12px; border-radius: 4px; border: none; font-size: 11px; font-weight: bold; cursor: pointer; margin-right: 5px; }
-.btn-approve { background: var(--green); color: white; }
-.btn-reject { background: #8b2323; color: white; }
+.payment-numbers { background: #090a0c; border: 1px solid var(--border); padding: 15px; border-radius: 8px; margin-bottom: 15px; font-size: 13px; line-height: 1.8; }
 
 /* RESPONSIVE */
 @media (max-width: 1100px) {
@@ -184,7 +183,7 @@ footer a:hover { color: var(--gold); }
 
 <header>
   <div class="container navbar">
-    <a href="#home" class="brand">
+    <a href="#home" class="brand" onclick="showPublic()">
       <span class="brand-mark">♛</span>
       <div>
         <div class="brand-name">ELITE</div>
@@ -197,7 +196,6 @@ footer a:hover { color: var(--gold); }
       <a href="#profiles">Browse</a>
       <a href="#how-it-works">How It Works</a>
       <a href="#safety">Safety &amp; Privacy</a>
-      <a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions">
       <button class="btn btn-outline" onclick="openModal('login')">Login</button>
@@ -249,7 +247,7 @@ footer a:hover { color: var(--gold); }
     </div>
     <div class="step">
       <div class="step-icon">♙</div>
-      <div><strong>3. Become a Member</strong><p>Pay K1000 membership to unlock contacts.</p></div>
+      <div><strong>3. Become a Member</strong><p>Pay K1000 to unlock contact details.</p></div>
     </div>
     <div class="step">
       <div class="step-icon">▤</div>
@@ -261,11 +259,10 @@ footer a:hover { color: var(--gold); }
 <section class="featured container" id="profiles">
   <div class="section-heading">
     <h2>Featured Ladies</h2>
-    <a href="#profiles" class="view-all">View All →</a>
   </div>
   <div class="featured-layout">
     <div class="profile-grid" id="profileGrid">
-      <!-- Profiles injected by JS here -->
+        <!-- Profiles injected by JS -->
     </div>
     <aside>
       <div class="account-panel">
@@ -288,7 +285,7 @@ footer a:hover { color: var(--gold); }
     <div class="details-grid">
       <div class="detail-box">
         <h3>✓ Profile Verification</h3>
-        <p>Profiles are reviewed by an administrator before receiving a verified badge. Verification must be genuine.</p>
+        <p>Profiles are reviewed by an administrator before receiving a verified badge. Verification is genuine.</p>
       </div>
       <div class="detail-box">
         <h3>♙ Protected Contact Details</h3>
@@ -303,20 +300,21 @@ footer a:hover { color: var(--gold); }
 </section>
 </main>
 
-<!-- ADMIN PANEL (Hidden by default) -->
-<section class="admin-panel container" id="adminPanel">
-    <div class="section-heading">
-        <h2>Admin Verification</h2>
-        <button class="btn btn-outline" onclick="closeAdmin()">Back to Site</button>
-    </div>
-    <p style="color:var(--muted); font-size:13px;">Approve payments and verify lady registrations.</p>
-    <div style="overflow-x:auto;">
+<!-- ADMIN PANEL -->
+<section id="adminPanel">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Admin Dashboard</h2>
+            <button class="btn btn-outline" onclick="showPublic()">← Back to Website</button>
+        </div>
+        <p>Review and approve pending profiles and memberships below.</p>
         <table class="admin-table">
             <thead>
-                <tr><th>Date</th><th>Name</th><th>Type</th><th>Photo</th><th>Status</th><th>Actions</th></tr>
+                <tr><th>Date</th><th>Details</th><th>Status</th><th>Actions</th></tr>
             </thead>
-            <tbody id="adminTableBody"></tbody>
+            <tbody id="paymentRows"></tbody>
         </table>
+        <p id="noPayments" style="text-align: center; color: #888; margin-top: 20px;">No submissions yet.</p>
     </div>
 </section>
 
@@ -329,261 +327,249 @@ footer a:hover { color: var(--gold); }
     <div>
       <a href="#safety">Privacy</a> &nbsp; | &nbsp;
       <a href="#safety">Safety</a> &nbsp; | &nbsp;
-      <a href="mailto:support@elite.example">Contact</a> &nbsp; | &nbsp;
-      <a href="#" onclick="openAdmin(); return false;">Admin</a>
+      <a href="#" onclick="showAdmin();return false;">Admin</a>
     </div>
     <div>© <span id="year"></span> Elite. All rights reserved.</div>
   </div>
 </footer>
 
-<!-- MODAL -->
-<div class="modal" id="modal" role="dialog" aria-modal="true">
+<!-- MODAL FOR REGISTRATION & LOGIN -->
+<div class="modal" id="modal">
   <div class="modal-content">
     <button class="close-modal" onclick="closeModal()">×</button>
-    <h2 id="modalTitle">Welcome to Elite</h2>
+    <h2 id="modalTitle">Join Elite</h2>
+    <p id="modalDesc">Create your profile.</p>
     
-    <form id="dynamicForm">
-      <!-- LOGIN / PAYMENT FIELDS -->
-      <div id="formStandard">
-        <input type="text" id="inputName" placeholder="Your name or email" required>
-        
-        <div id="membershipPaymentFields" style="display:none;">
-          <p style="font-size:12px; color:var(--gold); margin:10px 0;">Pay K1000 to: Mumba Sampa<br>MTN: 0960168307<br>Airtel: 0972154889</p>
-          <select id="inputNetwork" required>
-            <option value="">Select Payment Network</option>
-            <option value="MTN">MTN Money</option>
-            <option value="Airtel">Airtel Money</option>
-          </select>
-          <input type="text" id="inputRef" placeholder="Transaction Reference" required>
-        </div>
-      </div>
-
-      <!-- REGISTRATION FIELDS (Ladies) -->
-      <div id="formRegistration" style="display:none;">
-        <input type="text" id="regName" placeholder="Full Name" required>
+    <form id="mainForm">
+      <!-- Registration Fields -->
+      <div id="registerFields" style="display:none">
+        <input type="text" id="regName" placeholder="Full name" required>
         <input type="number" id="regAge" placeholder="Age (18+)" min="18" required>
         <input type="text" id="regLocation" placeholder="Location (e.g. Lusaka)" required>
-        <input type="tel" id="regWhatsApp" placeholder="WhatsApp Number" required>
-        <input type="text" id="regTelegram" placeholder="Telegram Username (Optional)">
-        <label style="font-size:12px; color:var(--muted); display:block; margin-top:12px;">Upload Profile Photo (Required for verification)</label>
+        <input type="text" id="regWhatsApp" placeholder="WhatsApp Number" required>
+        <input type="text" id="regTelegram" placeholder="Telegram Username (optional)">
+        <label style="font-size:12px; color:#aaa;">Profile Photo (For Verification)</label>
         <input type="file" id="regPhoto" accept="image/*" required>
       </div>
 
-      <button type="submit" class="btn btn-gold" id="submitBtn" style="margin-top:15px;">Continue</button>
+      <!-- Login/Email for Men -->
+      <div id="loginFields">
+        <input type="email" id="email" placeholder="Email address" required>
+      </div>
+
+      <div id="paymentFields" style="display:none">
+        <div class="payment-numbers">
+            <b>Pay to: Mumba Sampa</b><br>
+            MTN: 0960168307<br>
+            Airtel: 0972154889
+        </div>
+        <select id="network">
+            <option value="">Select Network</option>
+            <option value="MTN">MTN Money</option>
+            <option value="Airtel">Airtel Money</option>
+        </select>
+        <input type="text" id="transactionRef" placeholder="Transaction Reference (Receipt No.)">
+      </div>
+
+      <button class="btn btn-gold" type="submit" id="submitBtn">Submit</button>
     </form>
-    <p id="modalMessage" style="font-size:11px; margin-top:15px; text-align:center; color:var(--green);"></p>
+    
+    <div id="successMessage" style="display:none; margin-top: 15px; color: var(--green); font-weight: bold;">
+        Submitted successfully. Pending admin approval.
+    </div>
   </div>
 </div>
 
 <script>
 const BACKEND_URL = 'https://elite-flcq.onrender.com';
-let currentMode = 'login'; // 'login', 'register', 'view_profile'
+let profiles = [];
+let currentModalMode = '';
+
+const $ = id => document.getElementById(id);
+const modal = $('modal');
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Mobile Menu
+// Navigation Menu toggle for mobile
 document.getElementById("menuToggle").addEventListener("click", () => {
   document.getElementById("navLinks").classList.toggle("open");
 });
-document.querySelectorAll("#navLinks a").forEach(link => {
-  link.addEventListener("click", () => document.getElementById("navLinks").classList.remove("open"));
-});
 
-// Fetch and Render Real Profiles from Database
+// Load data on start
+loadProfiles();
+
 async function loadProfiles() {
-    const grid = document.getElementById('profileGrid');
-    grid.innerHTML = '<p style="color:var(--muted); font-size:14px;">Loading profiles...</p>';
-    
     try {
-        const res = await fetch(`${BACKEND_URL}/api/payments`);
-        const data = await res.json();
-        
-        // Filter: Only Approved Lady Registrations
-        const approvedLadies = data.filter(row => row.type === 'Lady Registration' && row.status === 'Approved');
-        
-        if (approvedLadies.length === 0) {
-            grid.innerHTML = '<p style="color:var(--muted); font-size:14px; padding:20px;">No verified profiles available yet. Register today to be the first!</p>';
-            return;
-        }
-
-        grid.innerHTML = approvedLadies.map(lady => `
-            <article class="profile-card">
-              <div class="profile-image">
-                <img src="${lady.image_url || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'}" alt="Profile">
-                <span class="verified">✓ Verified</span>
-                <div class="location">⌖ ${lady.profile || 'Lusaka'}</div>
-              </div>
-              <div class="profile-info">
-                <h3>${lady.name} <span>${lady.age || '25'}</span></h3>
-                <p>Available for premium companionship.</p>
-                <button class="profile-button" onclick="openPayment('${lady.name}')">Unlock Contact - K1000 →</button>
-              </div>
-            </article>
-        `).join('');
-    } catch (err) {
-        grid.innerHTML = '<p style="color:red;">Failed to load profiles. Server waking up...</p>';
+        const response = await fetch(`${BACKEND_URL}/api/payments`);
+        const data = await response.json();
+        // Show only Approved Lady Registrations
+        profiles = data.filter(item => item.type === 'Lady Registration' && item.status === 'Approved');
+        renderProfiles();
+    } catch (error) {
+        console.error("Failed to load data", error);
     }
 }
 
-// Modal Control
+function renderProfiles() {
+    const grid = $('profileGrid');
+    if (profiles.length === 0) {
+        grid.innerHTML = '<p style="grid-column: 1/-1; color: #888;">No verified profiles available yet. Please check back later.</p>';
+        return;
+    }
+
+    grid.innerHTML = profiles.map(p => `
+        <article class="profile-card">
+            <div class="profile-image">
+                <img src="${p.image_url || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'}" alt="Profile Photo">
+                <span class="verified">✓ Verified</span>
+                <div class="location">⌖ ${p.profile || 'Zambia'}</div>
+            </div>
+            <div class="profile-info">
+                <h3>${p.name} <span>${p.reference || '24'}</span></h3>
+                <p>Available for private connections.</p>
+                <button class="profile-button" onclick="openPayment()">Become a Member · K1000</button>
+            </div>
+        </article>
+    `).join('');
+}
+
 function openModal(mode) {
-  currentMode = mode;
-  document.getElementById('modal').classList.add('active');
-  document.getElementById('modalMessage').textContent = '';
-  
-  const standardFields = document.getElementById('formStandard');
-  const regFields = document.getElementById('formRegistration');
-  const payFields = document.getElementById('membershipPaymentFields');
-  const title = document.getElementById('modalTitle');
-  const btn = document.getElementById('submitBtn');
+    currentModalMode = mode;
+    modal.classList.add("active");
+    $('successMessage').style.display = 'none';
+    $('mainForm').reset();
+    $('mainForm').style.display = 'block';
 
-  standardFields.style.display = 'block';
-  regFields.style.display = 'none';
-  payFields.style.display = 'none';
-
-  if (mode === 'login') {
-    title.textContent = "Welcome Back";
-    btn.textContent = "Login";
-  } else if (mode === 'register') {
-    title.textContent = "Join as a Lady (Free)";
-    standardFields.style.display = 'none';
-    regFields.style.display = 'block';
-    btn.textContent = "Submit Registration";
-  } else if (mode === 'view_profile') {
-    title.textContent = "Become a Member";
-    btn.textContent = "Submit Payment";
-    payFields.style.display = 'block';
-  }
+    if (mode === 'register') {
+        $('modalTitle').textContent = "Join Elite";
+        $('modalDesc').textContent = "Register your profile for free. Admin approval required.";
+        $('registerFields').style.display = 'block';
+        $('loginFields').style.display = 'none';
+        $('paymentFields').style.display = 'none';
+    } else if (mode === 'login') {
+        $('modalTitle').textContent = "Welcome Back";
+        $('modalDesc').textContent = "Login to your account.";
+        $('registerFields').style.display = 'none';
+        $('loginFields').style.display = 'block';
+        $('paymentFields').style.display = 'none';
+    }
 }
 
-function openPayment(ladyName) {
-    openModal('view_profile');
-    document.getElementById('modalMessage').textContent = `To contact ${ladyName}, you must become a member.`;
+function openPayment() {
+    currentModalMode = 'payment';
+    modal.classList.add("active");
+    $('successMessage').style.display = 'none';
+    $('mainForm').reset();
+    $('mainForm').style.display = 'block';
+
+    $('modalTitle').textContent = "Become a Member";
+    $('modalDesc').textContent = "Pay the K1000 membership fee to unlock contact details.";
+    $('registerFields').style.display = 'none';
+    $('loginFields').style.display = 'none';
+    $('paymentFields').style.display = 'block';
 }
 
-function closeModal() {
-  document.getElementById('modal').classList.remove('active');
-  document.getElementById('dynamicForm').reset();
-}
+function closeModal() { modal.classList.remove("active"); }
 
-// Handle Form Submission
-document.getElementById('dynamicForm').addEventListener('submit', async (e) => {
+$('mainForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-    const btn = document.getElementById('submitBtn');
-    const msg = document.getElementById('modalMessage');
-    btn.textContent = "Processing...";
-    btn.disabled = true;
-
     const formData = new FormData();
 
-    if (currentMode === 'register') {
-        formData.append('name', document.getElementById('regName').value);
+    if (currentModalMode === 'register') {
+        formData.append('name', $('regName').value);
         formData.append('type', 'Lady Registration');
-        formData.append('profile', document.getElementById('regLocation').value);
+        formData.append('profile', $('regLocation').value);
         formData.append('amount', 0);
         formData.append('network', 'N/A');
-        formData.append('ref', 'Free');
-        formData.append('age', document.getElementById('regAge').value); // Sending age for display
+        formData.append('ref', $('regAge').value); // Storing age in reference for demo
+        if ($('regPhoto').files[0]) formData.append('proof', $('regPhoto').files[0]);
         
-        const photoFile = document.getElementById('regPhoto').files[0];
-        if (photoFile) formData.append('proof', photoFile);
-
-    } else if (currentMode === 'view_profile') {
-        formData.append('name', document.getElementById('inputName').value);
+    } else if (currentModalMode === 'payment') {
+        formData.append('name', $('email').value);
         formData.append('type', 'Membership');
         formData.append('profile', 'Membership Access');
         formData.append('amount', 1000);
-        formData.append('network', document.getElementById('inputNetwork').value);
-        formData.append('ref', document.getElementById('inputRef').value);
+        formData.append('network', $('network').value);
+        formData.append('ref', $('transactionRef').value);
     } else {
-        // Login mockup
-        msg.style.color = "var(--gold)";
-        msg.textContent = "Login feature coming soon.";
-        btn.textContent = "Login";
-        btn.disabled = false;
+        // Login mode (just a demo for now)
+        $('successMessage').textContent = "Login functionality coming soon.";
+        $('successMessage').style.display = 'block';
         return;
     }
 
     try {
-        const res = await fetch(`${BACKEND_URL}/api/payments`, {
+        const response = await fetch(`${BACKEND_URL}/api/payments`, {
             method: 'POST',
             body: formData
         });
         
-        if (res.ok) {
-            msg.style.color = "var(--green)";
-            msg.textContent = "Submitted successfully! Status is PENDING until approved by Admin.";
-            document.getElementById('dynamicForm').reset();
-            if (currentMode === 'register') loadProfiles();
+        if (response.ok) {
+            $('mainForm').style.display = 'none';
+            $('successMessage').textContent = "Submitted successfully. Pending admin approval.";
+            $('successMessage').style.display = 'block';
+            loadProfiles();
         } else {
-            throw new Error("Failed");
+            alert('Submission failed. Please try again.');
         }
-    } catch (err) {
-        msg.style.color = "red";
-        msg.textContent = "Error. Server may be waking up. Try again.";
-    } finally {
-        btn.textContent = "Continue";
-        btn.disabled = false;
+    } catch (error) {
+        alert('Network error. Please check your connection.');
     }
 });
 
-// ADMIN FUNCTIONS
-async function openAdmin() {
-    document.getElementById('publicSite').style.display = 'none';
-    document.getElementById('adminPanel').classList.add('active');
+// Admin Panel Logic
+function showAdmin() {
+    $('publicSite').style.display = 'none';
+    $('adminPanel').classList.add('active');
     window.scrollTo(0,0);
-    await loadAdminData();
+    renderAdminData();
 }
 
-function closeAdmin() {
-    document.getElementById('adminPanel').classList.remove('active');
-    document.getElementById('publicSite').style.display = 'block';
-    loadProfiles();
+function showPublic() {
+    $('adminPanel').classList.remove('active');
+    $('publicSite').style.display = 'block';
+    window.scrollTo(0,0);
 }
 
-async function loadAdminData() {
-    const tbody = document.getElementById('adminTableBody');
-    tbody.innerHTML = '<tr><td colspan="6">Loading...</td></tr>';
-    
+async function renderAdminData() {
     try {
-        const res = await fetch(`${BACKEND_URL}/api/payments`);
-        const data = await res.json();
+        const response = await fetch(`${BACKEND_URL}/api/payments`);
+        const rows = await response.json();
         
-        tbody.innerHTML = data.map(row => `
+        $('paymentRows').innerHTML = rows.map(r => `
             <tr>
-                <td>${new Date(row.created_at).toLocaleDateString()}</td>
-                <td>${row.name}</td>
-                <td>${row.type}</td>
-                <td>${row.image_url ? `<a href="${row.image_url}" target="_blank" style="color:var(--gold)">View Photo</a>` : 'None'}</td>
-                <td><span style="color:${row.status === 'Approved' ? 'var(--green)' : row.status === 'Rejected' ? 'red' : 'orange'}">${row.status}</span></td>
+                <td>${new Date(r.created_at).toLocaleDateString()}</td>
                 <td>
-                    <button class="admin-btn btn-approve" onclick="updateStatus('${row.id}', 'Approved')">Approve</button>
-                    <button class="admin-btn btn-reject" onclick="updateStatus('${row.id}', 'Rejected')">Reject</button>
+                    <strong>${r.name}</strong><br>
+                    <span style="color:#888;">${r.type} - ${r.profile}</span><br>
+                    ${r.image_url ? `<a href="${r.image_url}" target="_blank" style="color:var(--gold);">View Photo</a>` : ''}
+                </td>
+                <td><span style="color:${r.status === 'Approved' ? 'var(--green)' : (r.status === 'Rejected' ? 'red' : 'orange')}">${r.status}</span></td>
+                <td>
+                    <button class="btn btn-outline" style="padding:5px 10px; font-size:10px;" onclick="updateStatus('${r.id}', 'Approved')">Approve</button>
+                    <button class="btn btn-outline" style="padding:5px 10px; font-size:10px;" onclick="updateStatus('${r.id}', 'Rejected')">Reject</button>
                 </td>
             </tr>
         `).join('');
-        
-        if(data.length === 0) tbody.innerHTML = '<tr><td colspan="6">No submissions yet.</td></tr>';
-    } catch (err) {
-        tbody.innerHTML = '<tr><td colspan="6" style="color:red">Error loading data.</td></tr>';
+        $('noPayments').style.display = rows.length > 0 ? 'none' : 'block';
+    } catch (error) {
+        $('noPayments').textContent = "Error loading data.";
     }
 }
 
-async function updateStatus(id, newStatus) {
+async function updateStatus(id, status) {
     try {
         await fetch(`${BACKEND_URL}/api/payments/${id}/status`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ status: newStatus })
+            body: JSON.stringify({ status })
         });
-        await loadAdminData(); // Refresh table
-    } catch (err) {
-        alert("Failed to update status.");
+        renderAdminData();
+        loadProfiles(); // Refresh public site data
+    } catch (error) {
+        alert('Failed to update status.');
     }
 }
-
-// Initial Load
-loadProfiles();
 </script>
 
 </body>
