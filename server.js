@@ -22,6 +22,7 @@ cloudinary.config({
 
 const upload = multer({ storage: multer.memoryStorage() });
 
+// THIS AUTOMATICALLY ADDS THE MISSING WHATSAPP/TELEGRAM/IMAGE COLUMNS
 const createTableQuery = `
 CREATE TABLE IF NOT EXISTS payments (
     id SERIAL PRIMARY KEY,
