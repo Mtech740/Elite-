@@ -1,832 +1,947 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080808">
-  <title>ELITE | Private Connections. Premium Access.</title>
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="ELITE — Private connections, premium access.">
+  <title>ELITE | Private Connections</title>
+
   <style>
     :root {
-      --gold: #d4af37;
-      --dark: #080808;
-      --panel: #151515;
-      --muted: #aaa;
+      --bg: #101010;
+      --panel: #191919;
+      --panel2: #222222;
+      --gold: #d4af66;
+      --gold-light: #f0d79e;
+      --text: #f6f3ec;
+      --muted: #aaa69c;
+      --border: #39352d;
+      --green: #69cf98;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      background: var(--dark);
-      color: #fff;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
 
+    a { color: inherit; text-decoration: none; }
+
+    button, input, select, textarea { font: inherit; }
+
+    button { cursor: pointer; }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    .gold { color: var(--gold); }
+
     header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(16,16,16,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 72px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 20px 7%;
-      border-bottom: 1px solid #292929;
+      justify-content: space-between;
+      gap: 15px;
     }
 
     .logo {
       color: var(--gold);
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 900;
       letter-spacing: 5px;
     }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 22px;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: var(--gold);
-    }
-
-    .hero {
-      min-height: 480px;
-      padding: 100px 7%;
+    .nav-links {
       display: flex;
+      gap: 22px;
       align-items: center;
-      background:
-        linear-gradient(90deg, #080808 15%, rgba(8,8,8,.75) 65%, rgba(8,8,8,.4)),
-        url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1600&q=85")
-        center 35% / cover;
+      font-size: 14px;
+      color: var(--muted);
     }
 
-    .hero-content {
-      max-width: 600px;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      letter-spacing: 4px;
-      font-size: 12px;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      font-size: clamp(38px, 6vw, 65px);
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      color: #ddd;
-      margin-bottom: 28px;
-      max-width: 480px;
-    }
+    .nav-links a:hover { color: var(--gold); }
 
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border: 1px solid var(--gold);
+      border-radius: 5px;
       background: var(--gold);
-      color: #080808;
-      padding: 13px 24px;
-      text-decoration: none;
-      border: none;
-      border-radius: 3px;
-      font-weight: bold;
-      cursor: pointer;
+      color: #17130b;
+      font-weight: 700;
+      text-align: center;
     }
+
+    .btn:hover { background: var(--gold-light); }
 
     .btn-outline {
       background: transparent;
       color: var(--gold);
-      border: 1px solid var(--gold);
-      margin-left: 10px;
     }
 
-    .section {
-      padding: 65px 7%;
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #17130b;
     }
+
+    .hero {
+      padding: 72px 0 55px;
+      background:
+        radial-gradient(ellipse at 80% 15%, #4a38201e, transparent 50%),
+        linear-gradient(135deg, #151515, #101010);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.05;
+      margin: 17px 0;
+      letter-spacing: -2px;
+    }
+
+    h1 span { color: var(--gold); }
+
+    .hero p {
+      max-width: 540px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .hero-card {
+      min-height: 350px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background:
+        radial-gradient(ellipse at 50% 20%, #d4af6620, transparent 48%),
+        linear-gradient(150deg, #28231b, #161616 65%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card:before {
+      content: "E";
+      position: absolute;
+      right: 20px;
+      top: -85px;
+      font-size: 340px;
+      line-height: 1;
+      color: #d4af660b;
+      font-weight: 900;
+    }
+
+    .hero-card h2 { font-size: 27px; margin-bottom: 5px; }
+    .hero-card p { font-size: 14px; margin: 0 0 18px; }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding: 22px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-item {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .trust-item strong {
+      display: block;
+      color: var(--gold);
+      font-size: 15px;
+    }
+
+    section { padding: 55px 0; }
 
     .section-heading {
-      text-align: center;
-      margin-bottom: 35px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 25px;
     }
 
     .section-heading h2 {
-      font-size: 30px;
-      margin-bottom: 8px;
+      font-size: clamp(27px, 4vw, 38px);
+      margin: 5px 0;
     }
 
     .section-heading p {
       color: var(--muted);
-    }
-
-    .gold {
-      color: var(--gold);
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-bottom: 35px;
-    }
-
-    .feature {
-      background: var(--panel);
-      padding: 25px;
-      text-align: center;
-      border: 1px solid #292929;
-    }
-
-    .feature h3 {
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-
-    .feature p {
-      color: var(--muted);
+      margin: 0;
       font-size: 14px;
     }
 
     .profiles {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
 
     .profile {
-      background: var(--panel);
-      border: 1px solid #292929;
       overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 9px;
     }
 
-    .profile img {
-      width: 100%;
-      height: 290px;
-      object-fit: cover;
-      display: block;
+    .portrait {
+      min-height: 215px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(ellipse at 50% 40%, #b9996030, transparent 55%),
+        linear-gradient(135deg, #30291f, #191919);
+      color: var(--gold);
+      font-size: 50px;
+      font-weight: bold;
     }
 
-    .profile-info {
-      padding: 18px;
+    .profile-body { padding: 17px; }
+
+    .profile-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
     }
 
-    .profile-info h3 {
-      margin-bottom: 5px;
-    }
-
-    .profile-info p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
+    .profile-title h3 { margin: 0; font-size: 19px; }
 
     .verified {
-      color: var(--gold);
+      color: var(--green);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .profile-body p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 8px 0 14px;
+    }
+
+    .profile-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      border-top: 1px solid var(--border);
+      padding-top: 13px;
       font-size: 12px;
     }
 
-    .profile .btn {
-      width: 100%;
-      text-align: center;
-      margin-top: 12px;
+    .locked { color: var(--gold); }
+
+    .notice {
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      background: var(--panel);
+      color: var(--muted);
+      padding: 17px;
+      border-radius: 5px;
+      font-size: 13px;
+      margin-top: 22px;
     }
 
     .steps {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
 
     .step {
-      padding: 22px;
       background: var(--panel);
-      border: 1px solid #292929;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 23px;
     }
 
     .step-number {
       color: var(--gold);
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 2px;
     }
 
-    .step p {
+    .step h3 { margin-bottom: 8px; }
+    .step p { color: var(--muted); font-size: 14px; }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .price-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 26px;
+    }
+
+    .price-card.featured { border-color: var(--gold); }
+
+    .price {
+      color: var(--gold);
+      font-size: 37px;
+      font-weight: 800;
+      margin: 12px 0;
+    }
+
+    .price-card p, .price-card li {
       color: var(--muted);
       font-size: 14px;
     }
 
-    .notice {
+    .price-card ul { padding-left: 20px; }
+
+    .form-panel {
+      max-width: 650px;
+      margin: auto;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 25px;
+    }
+
+    .form-panel h2 { margin-top: 0; }
+
+    label {
+      display: block;
       color: var(--muted);
       font-size: 13px;
-      margin-top: 25px;
-      text-align: center;
+      margin: 14px 0 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      background: #101010;
+      border: 1px solid #49443a;
+      border-radius: 5px;
+      color: var(--text);
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 1px solid var(--gold);
+      border-color: var(--gold);
+    }
+
+    input[type="checkbox"] { width: auto; }
+
+    input[type="file"] { font-size: 12px; }
+
+    .payment-number {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: #101010;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 12px;
+      margin: 10px 0;
+    }
+
+    .payment-number strong { color: var(--gold); }
+
+    .small-btn {
+      padding: 7px 10px;
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    .status {
+      display: none;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 5px;
+      background: #332918;
+      color: var(--gold-light);
+      font-size: 13px;
+    }
+
+    .warning {
+      color: #f1c4a1;
+      background: #38251b;
+      border-radius: 5px;
+      padding: 12px;
+      font-size: 12px;
+      margin: 14px 0;
     }
 
     footer {
-      border-top: 1px solid #292929;
-      padding: 30px 7%;
-      text-align: center;
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
     }
 
-    footer a {
-      color: var(--gold);
-      text-decoration: none;
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .modal {
       display: none;
       position: fixed;
       inset: 0;
-      z-index: 10;
-      background: rgba(0,0,0,.85);
-      padding: 20px;
-      overflow-y: auto;
+      z-index: 30;
+      padding: 18px;
+      background: #000c;
+      align-items: center;
+      justify-content: center;
     }
+
+    .modal.open { display: flex; }
 
     .modal-content {
-      background: #171717;
+      width: min(480px, 100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 24px;
+      background: var(--panel);
       border: 1px solid var(--gold);
-      max-width: 480px;
-      margin: 30px auto;
-      padding: 28px;
-      position: relative;
+      border-radius: 9px;
     }
 
-    .modal-content h2 {
-      color: var(--gold);
-      margin-bottom: 12px;
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .close {
-      position: absolute;
-      right: 15px;
-      top: 10px;
-      background: none;
-      color: white;
-      border: none;
-      font-size: 25px;
-      cursor: pointer;
+      border: 0;
+      color: var(--gold);
+      background: transparent;
+      font-size: 26px;
     }
 
-    label {
-      display: block;
-      margin-top: 15px;
-      font-size: 13px;
-      color: #ddd;
+    @media (max-width: 760px) {
+      .nav-links { gap: 10px; font-size: 12px; }
+      .nav-links .optional { display: none; }
+      .logo { font-size: 24px; }
+      .hero { padding-top: 45px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 25px; }
+      .hero-card { min-height: 230px; }
+      .profiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .portrait { min-height: 150px; }
+      .profile-body { padding: 12px; }
+      .profile-title { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .profile-title h3 { font-size: 16px; }
+      .profile-footer { flex-direction: column; align-items: stretch; }
+      .profile-footer .btn { padding: 9px; font-size: 12px; }
+      .steps { grid-template-columns: 1fr; }
+      .pricing { grid-template-columns: 1fr; }
+      .trust-item { font-size: 11px; }
+      .trust-item strong { font-size: 12px; }
+      section { padding: 40px 0; }
     }
 
-    input, select {
-      width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      background: #090909;
-      border: 1px solid #444;
-      color: white;
-      border-radius: 3px;
-    }
-
-    .payment-box {
-      background: #090909;
-      border: 1px solid #333;
-      padding: 15px;
-      margin-top: 15px;
-    }
-
-    .payment-box p {
-      margin: 5px 0;
-      font-size: 14px;
-    }
-
-    .warning {
-      color: #e8c65a;
-      font-size: 12px;
-      margin-top: 15px;
-    }
-
-    .modal-content .btn {
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    /* NEW UNLOCKED CONTACT BUTTONS */
-    .contact-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .contact-buttons a {
-      display: block;
-      text-align: center;
-      padding: 10px;
-      border-radius: 3px;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    .btn-whatsapp { background: #25D366; color: #fff; }
-    .btn-telegram { background: #0088cc; color: #fff; }
-
-    @media(max-width: 700px) {
-      header {
-        padding: 15px 5%;
-        flex-wrap: wrap;
-      }
-
-      nav {
-        margin-top: 12px;
-        width: 100%;
-      }
-
-      nav a {
-        margin: 0 12px 0 0;
-        font-size: 12px;
-      }
-
-      .hero {
-        padding: 75px 6%;
-        min-height: 420px;
-      }
-
-      .features, .steps {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .section {
-        padding: 50px 6%;
-      }
-    }
-
-    @media(max-width: 420px) {
-      .features, .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .btn-outline {
-        margin: 12px 0 0;
-      }
+    @media (max-width: 360px) {
+      .profiles { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
-
 <header>
-  <div class="logo">ELITE</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#profiles">Discover</a>
-    <a href="#how">How It Works</a>
-    <a href="#join">Join ELITE</a>
-  </nav>
+  <div class="container nav">
+    <a class="logo" href="#home">ELITE</a>
+    <nav class="nav-links">
+      <a href="#profiles">Explore</a>
+      <a href="#how" class="optional">How it works</a>
+      <a href="#register">Join</a>
+      <a href="#register" class="btn">Get Started</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div class="eyebrow">PRIVATE CONNECTIONS. PREMIUM ACCESS.</div>
-    <h1>Discover Amazing People in Your City</h1>
-    <p>
-      A premium platform built around privacy, verified profiles
-      and meaningful connections.
-    </p>
-    <a href="#profiles" class="btn">Explore Profiles</a>
-    <a href="#join" class="btn btn-outline">Become a Member</a>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-heading">
-    <h2>Why Choose <span class="gold">ELITE?</span></h2>
-    <p>Privacy, trust and exclusive access.</p>
-  </div>
-
-  <div class="features">
-    <div class="feature">
-      <h3>Verified Profiles</h3>
-      <p>Profiles are reviewed before they become publicly visible.</p>
-    </div>
-
-    <div class="feature">
-      <h3>Privacy First</h3>
-      <p>Personal contact details are protected and shared only with consent.</p>
-    </div>
-
-    <div class="feature">
-      <h3>Premium Access</h3>
-      <p>Clear access rules and transparent payment procedures.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="profiles">
-  <div class="section-heading">
-    <h2>Featured <span class="gold">Profiles</span></h2>
-    <p>Discover profiles from our community.</p>
-  </div>
-
-  <!-- PROFILES LOAD HERE FROM DATABASE -->
-  <div class="profiles" id="profileGrid">
-    <!-- Javascript will inject the real data here -->
-  </div>
-
-  <p class="notice" id="profileNotice">
-    Loading profiles...
-  </p>
-</section>
-
-<section class="section" id="how">
-  <div class="section-heading">
-    <h2>How It <span class="gold">Works</span></h2>
-    <p>A simple process with clear access rules.</p>
-  </div>
-
-  <div class="steps">
-    <div class="step">
-      <div class="step-number">01</div>
-      <h3>Register</h3>
-      <p>Create an account and submit your profile for review.</p>
-    </div>
-
-    <div class="step">
-      <div class="step-number">02</div>
-      <h3>Get Verified</h3>
-      <p>Our team reviews the profile and confirms consent.</p>
-    </div>
-
-    <div class="step">
-      <div class="step-number">03</div>
-      <h3>Discover</h3>
-      <p>Browse profiles and choose who you want to contact.</p>
-    </div>
-
-    <div class="step">
-      <div class="step-number">04</div>
-      <h3>Request Access</h3>
-      <p>Submit payment for the selected profile and wait for confirmation.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="join">
-  <div class="section-heading">
-    <h2>Join <span class="gold">ELITE</span></h2>
-    <p>Registration is FREE for ladies</p>
-    <button class="btn" onclick="openRegistration()">Register Your Profile</button>
-  </div>
-</section>
-
-<footer>
-  <div class="logo">ELITE</div>
-  <p>PRIVATE CONNECTIONS. PREMIUM ACCESS.</p>
-  <p>© 2026 ELITE. All rights reserved.</p>
-  <p>Adults 18+ only. Consent and privacy matter.</p>
-  <p>
-    <a href="#home">Back to top</a> | 
-    <a href="#" onclick="showAdmin(); return false;">Admin Area</a>
-  </p>
-</footer>
-
-<!-- CONTACT ACCESS MODAL (K750 Per Lady) -->
-<div class="modal" id="unlockModal">
-  <div class="modal-content">
-    <button class="close" onclick="closeModal('unlockModal')">&times;</button>
-    <h2 id="unlockTitle">Premium Contact Access</h2>
-    <p id="selectedProfile" style="margin-bottom: 15px;"></p>
-    
-    <!-- Step 1: Payment Instructions -->
-    <div id="paymentInstructions">
-      <p><strong class="gold">K750</strong> — one-time access request for this specific profile.</p>
-      
-      <div class="payment-box">
-        <p><strong>Pay via Airtel Money:</strong></p>
-        <p>Number: <b>0972154889</b></p>
-        <p>Name: <b>Mumba Sampa</b></p>
-        <p>MoMo Pay ID: <b>90571160</b></p>
-        <p class="warning">Confirm the recipient name before sending money.</p>
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">A private members directory</div>
+        <h1>Private Connections.<br><span>Premium Access.</span></h1>
+        <p>
+          Discover profiles, explore individual offerings and connect
+          privately with verified adult members.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#profiles">Explore Profiles</a>
+          <a class="btn btn-outline" href="#register">Join ELITE</a>
+        </div>
       </div>
 
-      <button class="btn" style="margin-top: 20px;" onclick="showUploadForm()">Continue to Upload Payment Proof</button>
+      <div class="hero-card">
+        <div class="eyebrow">The ELITE experience</div>
+        <h2>Privacy meets exclusivity.</h2>
+        <p>Browse freely. Unlock contacts individually. Stay in control.</p>
+        <a class="btn" href="#how">Discover How It Works</a>
+      </div>
     </div>
+  </section>
 
-    <!-- Step 2: Upload Screenshot -->
-    <form id="unlockForm" onsubmit="submitUnlock(event)" style="display: none;">
-      <label>Transaction Reference</label>
-      <input type="text" id="buyerRef" required placeholder="Enter transaction reference">
-
-      <label>Upload Payment Screenshot</label>
-      <input type="file" id="buyerPhoto" accept="image/*" required>
-
-      <p class="warning">
-        Your request will remain PENDING until an administrator checks
-        the payment. Uploading a screenshot does not automatically unlock the contact.
-      </p>
-
-      <button class="btn" type="submit">Submit Request for Approval</button>
-    </form>
-    
-    <div id="unlockSuccess" style="display:none; margin-top:15px; color:#4CAF50; text-align:center;">
-        Request submitted successfully. Pending admin approval.
+  <div class="container">
+    <div class="trust-strip">
+      <div class="trust-item">
+        <strong>Profile Review</strong>
+        Adult verification required
+      </div>
+      <div class="trust-item">
+        <strong>Private Access</strong>
+        Contacts stay locked
+      </div>
+      <div class="trust-item">
+        <strong>Clear Pricing</strong>
+        Pay before unlocking
+      </div>
     </div>
   </div>
-</div>
 
-<!-- REGISTRATION MODAL (Free) -->
-<div class="modal" id="registrationModal">
+  <section id="profiles">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Member directory</div>
+          <h2>Explore <span class="gold">Profiles</span></h2>
+          <p>Browse the directory before purchasing contact access.</p>
+        </div>
+      </div>
+
+      <div class="profiles" id="profileGrid"></div>
+
+      <div class="notice">
+        <strong class="gold">Privacy notice:</strong>
+        Contact details are not displayed publicly. A contact unlock
+        does not guarantee a reply, meeting or service. All users must
+        be adults and respect consent, boundaries and the law.
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Simple and transparent</div>
+          <h2>How ELITE Works</h2>
+        </div>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <div class="step-number">STEP 01</div>
+          <h3>Browse profiles</h3>
+          <p>Explore approved listings and review their descriptions.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">STEP 02</div>
+          <h3>Unlock a contact</h3>
+          <p>Pay K700 for the particular contact you want to access.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">STEP 03</div>
+          <h3>Await confirmation</h3>
+          <p>Your contact stays locked until an administrator confirms payment.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Transparent pricing</div>
+          <h2>Choose Your Access</h2>
+        </div>
+      </div>
+
+      <div class="pricing">
+        <article class="price-card">
+          <div class="eyebrow">For adult providers</div>
+          <h3>Member Registration</h3>
+          <div class="price">K100</div>
+          <p>Registration payment for submitting a profile for review.</p>
+          <ul>
+            <li>Profile submission</li>
+            <li>Adult and identity verification</li>
+            <li>Profile review before publication</li>
+          </ul>
+          <a href="#register" class="btn btn-outline">Register</a>
+        </article>
+
+        <article class="price-card featured">
+          <div class="eyebrow">For adult customers</div>
+          <h3>Individual Contact Unlock</h3>
+          <div class="price">K700</div>
+          <p>Unlock the contact details of one specific member after approval.</p>
+          <ul>
+            <li>Browse public profile details</li>
+            <li>One profile per unlock</li>
+            <li>Permanent access to the approved contact</li>
+          </ul>
+          <a href="#profiles" class="btn">Explore Profiles</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="register">
+    <div class="container">
+      <div class="form-panel">
+        <div class="eyebrow">Get started</div>
+        <h2>Submit a Registration</h2>
+        <p style="color:var(--muted);font-size:14px">
+          This demonstration form explains the registration process.
+          Real account creation requires the secure backend.
+        </p>
+
+        <form id="registrationForm">
+          <label for="regName">Full name</label>
+          <input id="regName" name="name" required maxlength="100"
+                 autocomplete="name">
+
+          <label for="regEmail">Email address</label>
+          <input id="regEmail" name="email" type="email" required
+                 autocomplete="email">
+
+          <label for="regRole">I am registering as</label>
+          <select id="regRole" name="role" required>
+            <option value="">Choose one</option>
+            <option value="provider">Adult provider — K100</option>
+            <option value="customer">Adult customer</option>
+          </select>
+
+          <label for="regAge">
+            <input id="regAge" type="checkbox" required>
+            I confirm that I am at least 18 years old.
+          </label>
+
+          <div class="warning">
+            This prototype does not submit or securely store registrations.
+            Do not upload identity documents or sensitive personal information
+            until the secure backend is deployed.
+          </div>
+
+          <button class="btn" type="submit">Continue</button>
+          <div class="status" id="regStatus" role="status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>
+      <div class="logo">ELITE</div>
+      <p>Private Connections. Premium Access.</p>
+    </div>
+    <div>
+      <a href="#profiles">Explore</a> ·
+      <a href="#how">How it works</a> ·
+      <a href="#register">Register</a>
+      <p>18+ only. Consent and privacy matter.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Contact unlock payment dialog -->
+<div class="modal" id="paymentModal" role="dialog"
+     aria-modal="true" aria-labelledby="paymentTitle">
   <div class="modal-content">
-    <button class="close" onclick="closeModal('registrationModal')">&times;</button>
-    <h2>Become an ELITE Member</h2>
-    <p>Profile registration is <strong class="gold">FREE</strong></p>
+    <div class="modal-head">
+      <h2 id="paymentTitle">Unlock Contact</h2>
+      <button class="close" id="closeModal" aria-label="Close">&times;</button>
+    </div>
 
-    <form id="registerForm" onsubmit="submitRegistration(event)">
-      <label>Full name</label>
-      <input type="text" id="regName" required placeholder="Your full name">
+    <p id="selectedProfile" class="gold"></p>
+    <p>Amount to pay: <strong class="gold">K700</strong></p>
 
-      <label>Age (18+)</label>
-      <input type="number" id="regAge" min="18" required placeholder="Enter age">
+    <p style="color:var(--muted);font-size:13px">
+      Send the exact amount to one of the company numbers below.
+      Then submit the transaction reference and payment screenshot.
+      Your request will remain pending until verified by an administrator.
+    </p>
 
-      <label>City</label>
-      <select id="regCity" required>
-        <option value="">Choose your city</option>
-        <option>Lusaka</option>
-        <option>Ndola</option>
-        <option>Kitwe</option>
-        <option>Livingstone</option>
-        <option>Other</option>
+    <div class="payment-number">
+      <div>MTN Mobile Money<br><strong>0960168307</strong></div>
+      <button class="small-btn" data-copy="0960168307">Copy</button>
+    </div>
+
+    <div class="payment-number">
+      <div>Airtel Money<br><strong>0972154889</strong></div>
+      <button class="small-btn" data-copy="0972154889">Copy</button>
+    </div>
+
+    <p style="font-size:12px;color:var(--muted)">
+      Recipient: Mumba Sampa
+    </p>
+
+    <form id="paymentForm">
+      <label for="network">Payment network</label>
+      <select id="network" required>
+        <option value="">Select network</option>
+        <option value="MTN">MTN Mobile Money</option>
+        <option value="Airtel">Airtel Money</option>
       </select>
 
-      <label>WhatsApp Number</label>
-      <input type="tel" id="regWhatsApp" required placeholder="e.g. 2609XXXXXXXX">
+      <label for="transactionRef">Transaction reference</label>
+      <input id="transactionRef" required maxlength="100"
+             autocomplete="off">
 
-      <label>Telegram Username</label>
-      <input type="text" id="regTelegram" required placeholder="@username">
+      <label for="payerName">Name used for payment</label>
+      <input id="payerName" required maxlength="100">
 
-      <label>Profile Photo (For Verification)</label>
-      <input type="file" id="regPhoto" accept="image/*" required>
+      <label for="receipt">Payment screenshot</label>
+      <input id="receipt" type="file"
+             accept="image/png,image/jpeg,image/webp" required>
 
-      <p class="warning">
-        Your registration remains pending until your profile photo is reviewed by an administrator.
-      </p>
+      <div class="warning">
+        This frontend cannot securely submit a receipt or verify money received.
+        No contact will be unlocked by this demonstration.
+      </div>
 
-      <button class="btn" type="submit">Submit Registration</button>
+      <button type="submit" class="btn">Submit for Verification</button>
+      <div id="paymentStatus" class="status" role="status"></div>
     </form>
-    
-    <div id="registerSuccess" style="display:none; margin-top:15px; color:#4CAF50; text-align:center;">
-        Registration submitted successfully. Pending admin approval.
-    </div>
   </div>
 </div>
 
 <script>
-  const BACKEND_URL = 'https://elite-flcq.onrender.com';
-  let currentLadyName = "";
-  let currentLadyId = "";
-  // Store unlocked IDs locally so the page remembers what the user paid for
-  let unlockedIds = JSON.parse(localStorage.getItem('elite_unlocked_ids') || '[]');
+  /*
+   * ELITE FRONTEND PROTOTYPE
+   * Sample profiles are fictional.
+   * Payment submissions are NOT sent to a server.
+   * No real contact details are stored in this file.
+   */
 
-  // --- LOAD PROFILES FROM DATABASE ---
-  async function loadProfiles() {
-    try {
-      const response = await fetch(`${BACKEND_URL}/api/payments`);
-      const data = await response.json();
-      
-      const ladies = data.filter(item => item.type === 'Lady Registration' && item.status === 'Approved');
-      const grid = document.getElementById("profileGrid");
-      const notice = document.getElementById("profileNotice");
-
-      if (ladies.length === 0) {
-        grid.innerHTML = "";
-        notice.style.display = "block";
-        notice.textContent = "No profiles available yet. Register today to be the first.";
-        return;
-      }
-
-      notice.style.display = "none";
-      
-      grid.innerHTML = ladies.map(lady => {
-        // Check if this specific lady is already paid for
-        const isUnlocked = unlockedIds.includes(lady.id.toString());
-        
-        let actionHtml = "";
-        if (isUnlocked) {
-          // Direct Links to WhatsApp/Telegram
-          // Note: lady.reference is storing WhatsApp, lady.profile stores City, we need Telegram too.
-          // In our logic, we'll put WhatsApp in 'reference' and Telegram in 'network' temporarily for registration
-          actionHtml = `
-            <div class="contact-buttons">
-              <a href="https://wa.me/${lady.reference}" target="_blank" class="btn-whatsapp">Message on WhatsApp</a>
-              <a href="https://t.me/${lady.network.replace('@','')}" target="_blank" class="btn-telegram">Message on Telegram</a>
-            </div>
-          `;
-        } else {
-          actionHtml = `<button class="btn" onclick="openUnlock('${lady.id}', '${lady.name}')">Unlock Contact (K750)</button>`;
-        }
-
-        return `
-          <div class="profile">
-            <img src="${lady.image_url || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85'}" alt="Profile">
-            <div class="profile-info">
-              <h3>${lady.name}</h3>
-              <p>${lady.profile}, Zambia</p>
-              <span class="verified">✓ Verified Profile</span>
-              ${actionHtml}
-            </div>
-          </div>
-        `;
-      }).join('');
-      
-    } catch (error) {
-      document.getElementById("profileNotice").textContent = "Error loading profiles.";
+  const demoProfiles = [
+    {
+      id: "demo-001",
+      name: "Amara",
+      location: "Lusaka",
+      description: "Sample profile for demonstrating the directory.",
+      initial: "A"
+    },
+    {
+      id: "demo-002",
+      name: "Zara",
+      location: "Lusaka",
+      description: "Sample profile for demonstrating the directory.",
+      initial: "Z"
+    },
+    {
+      id: "demo-003",
+      name: "Sasha",
+      location: "Lusaka",
+      description: "Sample profile for demonstrating the directory.",
+      initial: "S"
+    },
+    {
+      id: "demo-004",
+      name: "Tasha",
+      location: "Lusaka",
+      description: "Sample profile for demonstrating the directory.",
+      initial: "T"
+    },
+    {
+      id: "demo-005",
+      name: "Nadia",
+      location: "Lusaka",
+      description: "Sample profile for demonstrating the directory.",
+      initial: "N"
+    },
+    {
+      id: "demo-006",
+      name: "Mila",
+      location: "Lusaka",
+      description: "Sample profile for demonstrating the directory.",
+      initial: "M"
     }
+  ];
+
+  const profileGrid = document.getElementById("profileGrid");
+  const paymentModal = document.getElementById("paymentModal");
+  const paymentForm = document.getElementById("paymentForm");
+  let selectedProfile = null;
+
+  function renderProfiles() {
+    profileGrid.replaceChildren();
+
+    demoProfiles.forEach(profile => {
+      const card = document.createElement("article");
+      card.className = "profile";
+
+      const portrait = document.createElement("div");
+      portrait.className = "portrait";
+      portrait.textContent = profile.initial;
+
+      const body = document.createElement("div");
+      body.className = "profile-body";
+
+      const title = document.createElement("div");
+      title.className = "profile-title";
+
+      const name = document.createElement("h3");
+      name.textContent = profile.name;
+
+      const verification = document.createElement("span");
+      verification.className = "verified";
+      verification.textContent = "DEMO PROFILE";
+
+      title.append(name, verification);
+
+      const description = document.createElement("p");
+      description.textContent =
+        profile.description + " · " + profile.location;
+
+      const footer = document.createElement("div");
+      footer.className = "profile-footer";
+
+      const locked = document.createElement("span");
+      locked.className = "locked";
+      locked.textContent = "🔒 Contact locked";
+
+      const button = document.createElement("button");
+      button.className = "btn";
+      button.textContent = "Unlock · K700";
+      button.type = "button";
+      button.addEventListener("click", () => openPayment(profile));
+
+      footer.append(locked, button);
+      body.append(title, description, footer);
+      card.append(portrait, body);
+      profileGrid.append(card);
+    });
   }
 
-  loadProfiles();
-
-  function openUnlock(id, name) {
-    currentLadyId = id;
-    currentLadyName = name;
-    document.getElementById("selectedProfile").textContent = "To contact " + name + " via WhatsApp/Telegram, pay the membership fee of K750 for " + name + ".";
-    document.getElementById("unlockModal").style.display = "block";
-    
-    // Reset steps
-    document.getElementById("paymentInstructions").style.display = "block";
-    document.getElementById("unlockForm").style.display = "none";
-    document.getElementById("unlockSuccess").style.display = "none";
-    document.getElementById("unlockForm").reset();
+  function openPayment(profile) {
+    selectedProfile = profile;
+    document.getElementById("selectedProfile").textContent =
+      "Selected profile: " + profile.name;
+    document.getElementById("paymentStatus").style.display = "none";
+    paymentForm.reset();
+    paymentModal.classList.add("open");
   }
 
-  function showUploadForm() {
-    document.getElementById("paymentInstructions").style.display = "none";
-    document.getElementById("unlockForm").style.display = "block";
+  function closePayment() {
+    paymentModal.classList.remove("open");
+    selectedProfile = null;
   }
 
-  function openRegistration() {
-    document.getElementById("registrationModal").style.display = "block";
-    document.getElementById("registerForm").style.display = "block";
-    document.getElementById("registerSuccess").style.display = "none";
-    document.getElementById("registerForm").reset();
-  }
+  document.getElementById("closeModal").addEventListener(
+    "click", closePayment
+  );
 
-  function closeModal(id) {
-    document.getElementById(id).style.display = "none";
-  }
+  paymentModal.addEventListener("click", event => {
+    if (event.target === paymentModal) closePayment();
+  });
 
-  // --- SUBMIT MEMBERSHIP (MEN) ---
-  async function submitUnlock(event) {
+  document.querySelectorAll("[data-copy]").forEach(button => {
+    button.addEventListener("click", async () => {
+      const number = button.dataset.copy;
+
+      try {
+        await navigator.clipboard.writeText(number);
+        button.textContent = "Copied";
+      } catch {
+        window.prompt("Copy this payment number:", number);
+      }
+    });
+  });
+
+  document.getElementById("registrationForm").addEventListener(
+    "submit", event => {
+      event.preventDefault();
+
+      const status = document.getElementById("regStatus");
+      status.textContent =
+        "Demo only: registration has not been saved or submitted. " +
+        "The secure backend must be connected before launch.";
+      status.style.display = "block";
+    }
+  );
+
+  paymentForm.addEventListener("submit", event => {
     event.preventDefault();
-    const formData = new FormData();
-    
-    // We pass the lady's ID in the name field so the admin knows who was purchased
-    formData.append('name', `Access for ${currentLadyName} (ID: ${currentLadyId})`);
-    formData.append('type', 'Membership');
-    formData.append('profile', currentLadyName);
-    formData.append('amount', 750);
-    formData.append('network', 'Airtel');
-    formData.append('ref', document.getElementById('buyerRef').value);
-    
-    const photo = document.getElementById('buyerPhoto').files[0];
-    if (photo) formData.append('proof', photo);
 
-    try {
-      const response = await fetch(`${BACKEND_URL}/api/payments`, {
-        method: 'POST',
-        body: formData
-      });
-      
-      if (response.ok) {
-        document.getElementById("unlockForm").style.display = "none";
-        document.getElementById("unlockSuccess").style.display = "block";
-      } else {
-        alert("Error submitting. Please try again.");
-      }
-    } catch (error) {
-      alert("Network error. Please check your connection.");
-    }
-  }
+    const file = document.getElementById("receipt").files[0];
+    const status = document.getElementById("paymentStatus");
 
-  // --- SUBMIT REGISTRATION (LADIES) ---
-  async function submitRegistration(event) {
-    event.preventDefault();
-    const formData = new FormData();
-    
-    formData.append('name', document.getElementById('regName').value);
-    formData.append('type', 'Lady Registration');
-    formData.append('profile', document.getElementById('regCity').value);
-    formData.append('amount', 0);
-    // Storing WhatsApp and Telegram so they can be used later for direct links
-    formData.append('reference', document.getElementById('regWhatsApp').value);
-    formData.append('network', document.getElementById('regTelegram').value);
-    
-    const photo = document.getElementById('regPhoto').files[0];
-    if (photo) formData.append('proof', photo);
+    if (!selectedProfile) return;
 
-    try {
-      const response = await fetch(`${BACKEND_URL}/api/payments`, {
-        method: 'POST',
-        body: formData
-      });
-      
-      if (response.ok) {
-        document.getElementById("registerForm").style.display = "none";
-        document.getElementById("registerSuccess").style.display = "block";
-      } else {
-        alert("Error submitting. Please try again.");
-      }
-    } catch (error) {
-      alert("Network error. Please check your connection.");
-    }
-  }
-
-  // --- ADMIN DASHBOARD ---
-  function showAdmin() {
-    const pass = prompt("Enter Admin Password:");
-    if (pass !== "elite2026") {
-      alert("Access Denied.");
+    if (!file || file.size > 5 * 1024 * 1024) {
+      status.textContent =
+        "Choose an image no larger than 5 MB.";
+      status.style.display = "block";
       return;
     }
-    
-    fetch(`${BACKEND_URL}/api/payments`)
-      .then(res => res.json())
-      .then(data => {
-        let html = "<h3 style='color:#d4af37;margin-bottom:15px;'>Pending Requests</h3>";
-        const pending = data.filter(d => d.status === 'Pending');
-        
-        if (pending.length === 0) {
-          alert("No pending requests.");
-          return;
-        }
-        
-        pending.forEach(item => {
-          const type = item.type === 'Membership' ? 'K750 Unlock' : 'Lady Registration';
-          let extraInfo = "";
-          if(item.type === 'Lady Registration') {
-             extraInfo = `<p>WhatsApp: ${item.reference} | Telegram: ${item.network}</p>`;
-          }
-          
-          html += `
-            <div style="border:1px solid #444; padding:10px; margin-bottom:10px;">
-                <p><strong>${item.name}</strong> (${type})</p>
-                <p>City/Details: ${item.profile}</p>
-                ${extraInfo}
-                <p>Ref: ${item.network} - ${item.reference}</p>
-                ${item.image_url ? `<p><a href="${item.image_url}" target="_blank" style="color:#d4af37;">View Image</a></p>` : ''}
-                <button onclick="approve(${item.id})" style="background:green;color:white;padding:5px 10px;border:none;border-radius:3px;margin-top:5px;cursor:pointer;">Approve</button>
-                <button onclick="reject(${item.id})" style="background:red;color:white;padding:5px 10px;border:none;border-radius:3px;margin-top:5px;cursor:pointer;">Reject</button>
-            </div>
-          `;
-        });
 
-        const adminWindow = window.open("", "Admin", "width=400,height=600");
-        adminWindow.document.write(`
-            <body style="background:#111;color:#fff;font-family:Arial;padding:15px;">
-            ${html}
-            </body>
-        `);
-      });
-  }
+    status.textContent =
+      "DEMO ONLY: no payment record or screenshot has been uploaded. " +
+      "The real system must save your request securely as PENDING. " +
+      "The contact remains locked until an administrator verifies " +
+      "the actual payment.";
+    status.style.display = "block";
+  });
 
-  async function approve(id) {
-    // If it's a membership, we save the unlock to the browser so the UI changes for the buyer
-    const response = await fetch(`${BACKEND_URL}/api/payments/${id}/status`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status: 'Approved' })
-    });
-    
-    if(response.ok) {
-        // In a real app, this would be linked to the user's account.
-        // For now, we will just tell the admin it's approved.
-        alert("Approved! (Note: For the buyer to see the links, they need to reload the page and their ID must be saved in their browser)");
-        window.location.reload();
-    }
-  }
-
-  async function reject(id) {
-    await fetch(`${BACKEND_URL}/api/payments/${id}/status`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status: 'Rejected' })
-    });
-    alert("Rejected!");
-    window.location.reload();
-  }
-
-  // Handle local storage of unlocks (for demonstration so men don't refresh and lose access)
-  async function checkLocalUnlocks() {
-      // In a full production app, you would check if the logged-in user has a record of this payment.
-      // For this version, we simulate it via localStorage.
-  }
-
-  window.onclick = function(event) {
-    if (event.target.classList.contains("modal")) {
-      event.target.style.display = "none";
-    }
-  };
+  renderProfiles();
 </script>
-
 </body>
 </html>
