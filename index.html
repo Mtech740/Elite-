@@ -338,10 +338,6 @@ input, select {
   border-radius: 3px;
 }
 
-input[type="file"] {
-  font-size: 12px;
-}
-
 .payment-box {
   background: #090909;
   border: 1px solid #333;
@@ -389,6 +385,50 @@ input[type="file"] {
   text-align: center;
   padding: 13px;
   border-radius: 3px;
+}
+
+/* NEW MODERN UPLOAD BOXES */
+.upload-box {
+  border: 2px dashed #444;
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  background: #090909;
+  margin-top: 10px;
+}
+.upload-box:hover {
+  border-color: var(--gold);
+  background: #111;
+}
+.upload-box input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.upload-icon {
+  font-size: 30px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+.upload-box:hover .upload-icon {
+  color: var(--gold);
+}
+.upload-text {
+  font-size: 13px;
+  color: var(--muted);
+}
+.upload-success {
+  color: #25D366;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 /* MOBILE */
@@ -447,267 +487,159 @@ input[type="file"] {
 
 <body>
 
-<!-- HEADER -->
-
 <header>
-
   <div class="brand-logo">
     <svg viewBox="0 0 70 65" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 15 L19 27 L29 8 L39 27 L52 15 L48 42 L12 42 Z"
-        fill="none" stroke="#D4AF37" stroke-width="3"
-        stroke-linejoin="round"/>
-      <path d="M17 34 L25 52 L35 34 L45 52 L53 34"
-        fill="none" stroke="#D4AF37" stroke-width="3"
-        stroke-linejoin="round"/>
+      <path d="M8 15 L19 27 L29 8 L39 27 L52 15 L48 42 L12 42 Z" fill="none" stroke="#D4AF37" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M17 34 L25 52 L35 34 L45 52 L53 34" fill="none" stroke="#D4AF37" stroke-width="3" stroke-linejoin="round"/>
       <path d="M8 57 H62" stroke="#D4AF37" stroke-width="2"/>
     </svg>
     <span>ELITE</span>
   </div>
-
   <nav>
     <a href="#home">Home</a>
     <a href="#profiles">Discover</a>
     <a href="#how">How It Works</a>
     <a href="#join">Join ELITE</a>
   </nav>
-
 </header>
 
-<!-- HERO -->
-
 <section class="hero" id="home">
-
   <div class="hero-content">
-
-    <div class="eyebrow">
-      PRIVATE CONNECTIONS. PREMIUM ACCESS.
-    </div>
-
+    <div class="eyebrow">PRIVATE CONNECTIONS. PREMIUM ACCESS.</div>
     <h1>Discover Amazing People in Your City</h1>
-
-    <p>
-      A premium platform built around privacy,
-      verified profiles and meaningful connections.
-    </p>
-
+    <p>A premium platform built around privacy, verified profiles and meaningful connections.</p>
     <a href="#profiles" class="btn">Explore Profiles</a>
-
-    <a href="#join" class="btn btn-outline">
-      Become a Member
-    </a>
-
+    <a href="#join" class="btn btn-outline">Become a Member</a>
   </div>
-
 </section>
 
-<!-- FEATURES -->
-
 <section class="section">
-
   <div class="section-heading">
     <h2>Why Choose <span class="gold">ELITE?</span></h2>
     <p>Privacy, trust and exclusive access.</p>
   </div>
-
   <div class="features">
-
     <div class="feature">
       <h3>Verified Profiles</h3>
-      <p>
-        Profiles are reviewed before they become publicly visible.
-      </p>
+      <p>Profiles are reviewed before they become publicly visible.</p>
     </div>
-
     <div class="feature">
       <h3>Privacy First</h3>
-      <p>
-        Personal contact details are protected and shared only with consent.
-      </p>
+      <p>Personal contact details are protected and shared only with consent.</p>
     </div>
-
     <div class="feature">
       <h3>Premium Access</h3>
-      <p>
-        Clear access rules and transparent payment procedures.
-      </p>
+      <p>Clear access rules and transparent payment procedures.</p>
     </div>
-
   </div>
-
 </section>
 
-<!-- PROFILES (Dynamically loaded from Database) -->
-
 <section class="section" id="profiles">
-
   <div class="section-heading">
     <h2>Featured <span class="gold">Profiles</span></h2>
     <p>Discover profiles from our community.</p>
   </div>
-
   <div class="profiles" id="profileGrid">
     <!-- Javascript will inject profiles here -->
   </div>
-
-  <p class="notice" id="profileNotice">
-    Loading profiles...
-  </p>
-
+  <p class="notice" id="profileNotice">Loading profiles...</p>
 </section>
 
-<!-- HOW IT WORKS -->
-
 <section class="section" id="how">
-
   <div class="section-heading">
     <h2>How It <span class="gold">Works</span></h2>
     <p>A simple process with clear access rules.</p>
   </div>
-
   <div class="steps">
-
     <div class="step">
       <div class="step-number">01</div>
       <h3>Register</h3>
       <p>Create an account and submit your profile for review.</p>
     </div>
-
     <div class="step">
       <div class="step-number">02</div>
       <h3>Get Verified</h3>
       <p>Our team reviews the profile and confirms consent.</p>
     </div>
-
     <div class="step">
       <div class="step-number">03</div>
       <h3>Discover</h3>
       <p>Browse profiles and choose who you want to contact.</p>
     </div>
-
     <div class="step">
       <div class="step-number">04</div>
       <h3>Request Access</h3>
       <p>Submit payment for the selected profile and wait for confirmation.</p>
     </div>
-
   </div>
-
 </section>
 
-<!-- JOIN -->
-
 <section class="section" id="join">
-
   <div class="section-heading">
     <h2>Join <span class="gold">ELITE</span></h2>
     <p>Registration is FREE for ladies</p>
-
-    <button class="btn" onclick="openRegistration()">
-      Register Your Profile
-    </button>
+    <button class="btn" onclick="openRegistration()">Register Your Profile</button>
   </div>
-
 </section>
 
-<!-- FOOTER -->
-
 <footer>
-
   <div class="brand-logo">
     <svg viewBox="0 0 70 65" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 15 L19 27 L29 8 L39 27 L52 15 L48 42 L12 42 Z"
-        fill="none" stroke="#D4AF37" stroke-width="3"
-        stroke-linejoin="round"/>
-      <path d="M17 34 L25 52 L35 34 L45 52 L53 34"
-        fill="none" stroke="#D4AF37" stroke-width="3"
-        stroke-linejoin="round"/>
+      <path d="M8 15 L19 27 L29 8 L39 27 L52 15 L48 42 L12 42 Z" fill="none" stroke="#D4AF37" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M17 34 L25 52 L35 34 L45 52 L53 34" fill="none" stroke="#D4AF37" stroke-width="3" stroke-linejoin="round"/>
       <path d="M8 57 H62" stroke="#D4AF37" stroke-width="2"/>
     </svg>
     <span>ELITE</span>
   </div>
-
   <p>PRIVATE CONNECTIONS. PREMIUM ACCESS.</p>
   <p>© 2026 ELITE. All rights reserved.</p>
   <p>Adults 18+ only. Consent and privacy matter.</p>
   <p><a href="#home">Back to top</a></p>
-
 </footer>
 
 <!-- CONTACT ACCESS MODAL (K750) -->
-
 <div class="modal" id="unlockModal">
-
   <div class="modal-content">
-
-    <button class="close"
-      onclick="closeModal('unlockModal')">&times;</button>
-
+    <button class="close" onclick="closeModal('unlockModal')">&times;</button>
     <h2>Premium Contact Access</h2>
-
     <p id="selectedProfile" style="margin-bottom: 10px; font-weight: bold;"></p>
-
-    <p>
-      To contact this lady via WhatsApp/Telegram, pay the membership fee of <strong class="gold">K750</strong> for her.
-    </p>
-
+    <p>To contact this lady via WhatsApp/Telegram, pay the membership fee of <strong class="gold">K750</strong> for her.</p>
+    
     <div id="paymentInstructions">
       <div class="payment-box" style="margin-top: 15px;">
         <p><strong>Payment Details:</strong></p>
         <p><strong>Airtel Money:</strong> 0972154889</p>
         <p><strong>Name:</strong> Mumba Sampa</p>
         <p><strong>MoMo Pay ID:</strong> 90571160</p>
-        <p class="warning">
-          Confirm the recipient name before sending money.
-        </p>
+        <p class="warning">Confirm the recipient name before sending money.</p>
       </div>
       <button class="btn" onclick="showUploadForm()">Continue to Upload Screenshot</button>
     </div>
 
     <form id="unlockForm" onsubmit="submitUnlock(event)" style="display: none;">
-
       <label>Transaction reference</label>
       <input type="text" id="buyerRef" required placeholder="Enter transaction reference">
-
       <label>Upload Payment Screenshot</label>
       <input type="file" id="buyerPhoto" accept="image/*" required>
-
-      <p class="warning">
-        Your request remains PENDING until an administrator
-        verifies the payment. A screenshot alone does not unlock a contact.
-      </p>
-
-      <button class="btn" type="submit">
-        Submit Access Request
-      </button>
-
+      <p class="warning">Your request remains PENDING until an administrator verifies the payment. A screenshot alone does not unlock a contact.</p>
+      <button class="btn" type="submit">Submit Access Request</button>
     </form>
 
     <div id="unlockSuccess" style="display: none; margin-top: 15px; color: #25D366; font-weight: bold; text-align: center;">
         Request submitted successfully. Please wait for admin approval.
     </div>
-
   </div>
-
 </div>
 
-<!-- REGISTRATION MODAL (FREE) -->
-
+<!-- REGISTRATION MODAL (MODERN UPLOAD) -->
 <div class="modal" id="registrationModal">
-
   <div class="modal-content">
-
-    <button class="close"
-      onclick="closeModal('registrationModal')">&times;</button>
-
+    <button class="close" onclick="closeModal('registrationModal')">&times;</button>
     <h2>Become an ELITE Member</h2>
-
-    <p>
-      Profile registration is
-      <strong class="gold">FREE</strong>
-    </p>
+    <p>Profile registration is <strong class="gold">FREE</strong></p>
 
     <form id="registerForm" onsubmit="submitRegistration(event)">
-
       <label>Full name</label>
       <input type="text" id="regName" required placeholder="Your full name">
 
@@ -730,38 +662,59 @@ input[type="file"] {
       <label>Telegram Username</label>
       <input type="text" id="regTelegram" required placeholder="@username">
 
-      <label>Profile Photo (For Verification)</label>
-      <input type="file" id="regPhoto" accept="image/*" required>
+      <!-- MODERN UPLOAD BOX 1: PROFILE PHOTOS -->
+      <label>Profile Photos (Select 2 to 5 photos)</label>
+      <div class="upload-box" id="boxProfilePhotos">
+        <input type="file" id="regPhotos" accept="image/*" multiple required>
+        <div class="upload-icon">+</div>
+        <div class="upload-text" id="textProfilePhotos">Tap to upload your photos</div>
+      </div>
 
-      <p class="warning">
-        Registration remains pending until your photo is verified by an admin.
-      </p>
+      <!-- MODERN UPLOAD BOX 2: VERIFICATION SELFIE -->
+      <label>Verification Selfie (Unedited, No Filters)</label>
+      <div class="upload-box" id="boxSelfie">
+        <input type="file" id="regSelfie" accept="image/*" capture="user" required>
+        <div class="upload-icon">📷</div>
+        <div class="upload-text" id="textSelfie">Tap to take a live selfie</div>
+      </div>
 
-      <button class="btn" type="submit">
-        Submit Registration
-      </button>
+      <p class="warning">Verification requires an unedited selfie to confirm you are a real person.</p>
 
+      <button class="btn" type="submit">Submit Registration</button>
     </form>
 
     <div id="registerSuccess" style="display: none; margin-top: 15px; color: #25D366; font-weight: bold; text-align: center;">
         Registration submitted successfully. Pending admin approval.
     </div>
-
   </div>
-
 </div>
 
 <script>
 const BACKEND_URL = 'https://elite-flcq.onrender.com';
 let currentLadyName = "";
 let currentLadyId = "";
-// Stores IDs of ladies this specific browser has unlocked
 let unlockedIds = JSON.parse(localStorage.getItem('elite_unlocked_ids') || '[]');
 
 // Check if URL has /admin to show the private admin panel
 if (window.location.pathname.includes('/admin')) {
     setTimeout(promptAdmin, 500);
 }
+
+// Update UI when photos are selected
+document.getElementById('regPhotos').addEventListener('change', function() {
+    const count = this.files.length;
+    if (count > 0) {
+        document.getElementById('boxProfilePhotos').style.borderColor = '#25D366';
+        document.getElementById('textProfilePhotos').innerHTML = `<span class="upload-success">✓ ${count} Photos Selected</span>`;
+    }
+});
+
+document.getElementById('regSelfie').addEventListener('change', function() {
+    if (this.files.length > 0) {
+        document.getElementById('boxSelfie').style.borderColor = '#25D366';
+        document.getElementById('textSelfie').innerHTML = `<span class="upload-success">✓ Selfie Attached</span>`;
+    }
+});
 
 // --- LOAD PROFILES FROM DATABASE ---
 async function loadProfiles() {
@@ -787,10 +740,8 @@ async function loadProfiles() {
             
             let actionHtml = "";
             if (isUnlocked) {
-                // In registration: reference = WhatsApp, network = Telegram
                 const waLink = `https://wa.me/${lady.reference}`;
                 const tgLink = `https://t.me/${lady.network.replace('@','')}`;
-                
                 actionHtml = `
                   <div class="contact-buttons">
                     <a href="${waLink}" target="_blank" class="btn-whatsapp">Message on WhatsApp</a>
@@ -813,13 +764,11 @@ async function loadProfiles() {
               </div>
             `;
         }).join('');
-        
     } catch (error) {
         document.getElementById("profileNotice").textContent = "Error loading profiles. Please try again later.";
     }
 }
 
-// Load immediately
 loadProfiles();
 
 function openUnlock(id, name) {
@@ -827,8 +776,6 @@ function openUnlock(id, name) {
     currentLadyName = name;
     document.getElementById("selectedProfile").textContent = "Contact " + name;
     document.getElementById("unlockModal").style.display = "block";
-    
-    // Reset steps
     document.getElementById("paymentInstructions").style.display = "block";
     document.getElementById("unlockForm").style.display = "none";
     document.getElementById("unlockSuccess").style.display = "none";
@@ -845,6 +792,12 @@ function openRegistration() {
     document.getElementById("registerForm").style.display = "block";
     document.getElementById("registerSuccess").style.display = "none";
     document.getElementById("registerForm").reset();
+    
+    // Reset upload boxes
+    document.getElementById('boxProfilePhotos').style.borderColor = '#444';
+    document.getElementById('textProfilePhotos').textContent = 'Tap to upload your photos';
+    document.getElementById('boxSelfie').style.borderColor = '#444';
+    document.getElementById('textSelfie').textContent = 'Tap to take a live selfie';
 }
 
 function closeModal(id) {
@@ -856,7 +809,6 @@ async function submitUnlock(event) {
     event.preventDefault();
     const formData = new FormData();
     
-    // We pass the lady's ID in the name field so the admin knows who was purchased
     formData.append('name', `K750 Unlock for ${currentLadyName}`);
     formData.append('type', 'Membership');
     formData.append('profile', currentLadyName);
@@ -884,23 +836,42 @@ async function submitUnlock(event) {
     }
 }
 
-// --- SUBMIT REGISTRATION (LADIES) ---
+// --- SUBMIT REGISTRATION (LADIES) WITH MULTIPLE PHOTOS ---
 async function submitRegistration(event) {
     event.preventDefault();
-    const formData = new FormData();
     
+    const photos = document.getElementById('regPhotos').files;
+    const selfie = document.getElementById('regSelfie').files[0];
+
+    if (photos.length < 2) {
+        alert("Please select at least 2 profile photos.");
+        return;
+    }
+
+    const formData = new FormData();
     formData.append('name', document.getElementById('regName').value);
     formData.append('type', 'Lady Registration');
     formData.append('profile', document.getElementById('regCity').value);
     formData.append('amount', 0);
-    // Storing WhatsApp and Telegram so they can be used later for direct links
     formData.append('reference', document.getElementById('regWhatsApp').value);
     formData.append('network', document.getElementById('regTelegram').value);
     
-    const photo = document.getElementById('regPhoto').files[0];
-    if (photo) formData.append('proof', photo);
+    // Append all photos
+    for (let i = 0; i < photos.length; i++) {
+        formData.append('photos', photos[i]);
+    }
+    // Append the verification selfie
+    formData.append('selfie', selfie);
+
+    // Change button text to show loading
+    const btn = event.target.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = "Uploading Photos...";
+    btn.disabled = true;
 
     try {
+        // Note: Your Render backend needs to be updated to handle multiple files. 
+        // We will do this in the next step if needed.
         const response = await fetch(`${BACKEND_URL}/api/payments`, {
             method: 'POST',
             body: formData
@@ -911,18 +882,22 @@ async function submitRegistration(event) {
             document.getElementById("registerSuccess").style.display = "block";
         } else {
             alert("Error submitting. Please try again.");
+            btn.textContent = originalText;
+            btn.disabled = false;
         }
     } catch (error) {
         alert("Network error. Please check your connection.");
+        btn.textContent = originalText;
+        btn.disabled = false;
     }
 }
 
-// --- ADMIN DASHBOARD (PRIVATE LINK) ---
+// --- ADMIN DASHBOARD ---
 function promptAdmin() {
     const pass = prompt("Restricted Area. Enter Admin Password:");
     if (pass !== "elite2026") {
         alert("Access Denied.");
-        window.location.href = "/"; // Kick them back to homepage if wrong
+        window.location.href = "/"; 
         return;
     }
     
@@ -993,11 +968,6 @@ async function reject(id) {
     window.location.reload();
 }
 
-// HOW TO UNLOCK THE UI FOR A CLIENT AFTER APPROVAL:
-// In production, this checks the database for the user's ID. 
-// For this demo, you can simulate a client unlocking by pasting their lady ID into localStorage.
-// (We will handle user login/accounts in the next phase).
-
 window.onclick = function(event) {
   if (event.target.classList.contains("modal")) {
     event.target.style.display = "none";
@@ -1006,4 +976,4 @@ window.onclick = function(event) {
 </script>
 
 </body>
-</html>
+      </html>
