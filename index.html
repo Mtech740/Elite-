@@ -695,8 +695,8 @@ let currentLadyName = "";
 let currentLadyId = "";
 let unlockedIds = JSON.parse(localStorage.getItem('elite_unlocked_ids') || '[]');
 
-// Check if URL has /admin to show the private admin panel
-if (window.location.pathname.includes('/admin')) {
+// Check if URL has ?admin to show the private admin panel
+if (window.location.search.includes('admin')) {
     setTimeout(promptAdmin, 500);
 }
 
@@ -870,8 +870,6 @@ async function submitRegistration(event) {
     btn.disabled = true;
 
     try {
-        // Note: Your Render backend needs to be updated to handle multiple files. 
-        // We will do this in the next step if needed.
         const response = await fetch(`${BACKEND_URL}/api/payments`, {
             method: 'POST',
             body: formData
@@ -976,4 +974,4 @@ window.onclick = function(event) {
 </script>
 
 </body>
-      </html>
+</html>
