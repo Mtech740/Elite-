@@ -33,7 +33,6 @@ body {
 }
 
 /* BRAND LOGO */
-
 .brand-logo {
   display: flex;
   align-items: center;
@@ -44,7 +43,6 @@ body {
   font-weight: bold;
   letter-spacing: 6px;
 }
-
 .brand-logo svg {
   width: 48px;
   height: 48px;
@@ -52,7 +50,6 @@ body {
 }
 
 /* HEADER */
-
 header {
   display: flex;
   align-items: center;
@@ -61,20 +58,17 @@ header {
   border-bottom: 1px solid #292929;
   background: #080808;
 }
-
 nav a {
   color: white;
   text-decoration: none;
   margin-left: 22px;
   font-size: 14px;
 }
-
 nav a:hover {
   color: var(--gold);
 }
 
 /* HERO */
-
 .hero {
   min-height: 490px;
   padding: 100px 7%;
@@ -85,31 +79,26 @@ nav a:hover {
     url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1600&q=85")
     center 35% / cover;
 }
-
 .hero-content {
   max-width: 600px;
 }
-
 .eyebrow {
   color: var(--gold);
   letter-spacing: 4px;
   font-size: 12px;
   margin-bottom: 18px;
 }
-
 h1 {
   font-family: Georgia, serif;
   font-size: clamp(40px, 6vw, 68px);
   line-height: 1.12;
   margin-bottom: 20px;
 }
-
 .hero p {
   color: #ddd;
   max-width: 480px;
   margin-bottom: 28px;
 }
-
 .btn {
   display: inline-block;
   background: var(--gold);
@@ -121,11 +110,9 @@ h1 {
   font-weight: bold;
   cursor: pointer;
 }
-
 .btn:hover {
   background: #f0d36c;
 }
-
 .btn-outline {
   background: transparent;
   color: var(--gold);
@@ -134,103 +121,85 @@ h1 {
 }
 
 /* GENERAL SECTIONS */
-
 .section {
   padding: 70px 7%;
 }
-
 .section-heading {
   text-align: center;
   margin-bottom: 40px;
 }
-
 .section-heading h2 {
   font-family: Georgia, serif;
   font-size: 32px;
   margin-bottom: 8px;
 }
-
 .section-heading p {
   color: var(--muted);
 }
-
 .gold {
   color: var(--gold);
 }
 
 /* FEATURES */
-
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-
 .feature {
   background: var(--panel);
   padding: 28px;
   text-align: center;
   border: 1px solid #292929;
 }
-
 .feature h3 {
   color: var(--gold);
   margin-bottom: 10px;
   font-family: Georgia, serif;
 }
-
 .feature p {
   color: var(--muted);
   font-size: 14px;
 }
 
 /* PROFILE CARDS */
-
 .profiles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
 }
-
 .profile {
   background: var(--panel);
   border: 1px solid #292929;
   overflow: hidden;
 }
-
 .profile img {
   width: 100%;
   height: 300px;
   object-fit: cover;
   display: block;
 }
-
 .profile-info {
   padding: 18px;
 }
-
 .profile-info h3 {
   font-family: Georgia, serif;
   margin-bottom: 5px;
 }
-
 .profile-info p {
   color: var(--muted);
   font-size: 14px;
   margin-bottom: 12px;
 }
-
 .verified {
   color: var(--gold);
   font-size: 12px;
 }
-
 .profile .btn {
   width: 100%;
   margin-top: 14px;
   text-align: center;
 }
-
 .notice {
   color: var(--muted);
   font-size: 13px;
@@ -239,32 +208,27 @@ h1 {
 }
 
 /* HOW IT WORKS */
-
 .steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 }
-
 .step {
   padding: 24px;
   background: var(--panel);
   border: 1px solid #292929;
 }
-
 .step-number {
   color: var(--gold);
   font-size: 28px;
   font-weight: bold;
 }
-
 .step p {
   color: var(--muted);
   font-size: 14px;
 }
 
 /* FOOTER */
-
 footer {
   border-top: 1px solid #292929;
   padding: 35px 7%;
@@ -272,19 +236,16 @@ footer {
   color: var(--muted);
   font-size: 13px;
 }
-
 footer .brand-logo {
   justify-content: center;
   margin-bottom: 12px;
 }
-
 footer a {
   color: var(--gold);
   text-decoration: none;
 }
 
 /* MODALS */
-
 .modal {
   display: none;
   position: fixed;
@@ -294,7 +255,6 @@ footer a {
   padding: 20px;
   overflow-y: auto;
 }
-
 .modal-content {
   background: #171717;
   border: 1px solid var(--gold);
@@ -303,13 +263,11 @@ footer a {
   padding: 28px;
   position: relative;
 }
-
 .modal-content h2 {
   color: var(--gold);
   font-family: Georgia, serif;
   margin-bottom: 12px;
 }
-
 .close {
   position: absolute;
   right: 15px;
@@ -320,14 +278,12 @@ footer a {
   font-size: 27px;
   cursor: pointer;
 }
-
 label {
   display: block;
   margin-top: 15px;
   font-size: 13px;
   color: #ddd;
 }
-
 input, select {
   width: 100%;
   padding: 12px;
@@ -337,25 +293,21 @@ input, select {
   color: white;
   border-radius: 3px;
 }
-
 .payment-box {
   background: #090909;
   border: 1px solid #333;
   padding: 15px;
   margin-top: 15px;
 }
-
 .payment-box p {
   margin: 5px 0;
   font-size: 14px;
 }
-
 .warning {
   color: #e8c65a;
   font-size: 12px;
   margin-top: 15px;
 }
-
 .modal-content .btn {
   width: 100%;
   margin-top: 20px;
@@ -387,7 +339,7 @@ input, select {
   border-radius: 3px;
 }
 
-/* NEW MODERN UPLOAD BOXES */
+/* MODERN UPLOAD BOXES */
 .upload-box {
   border: 2px dashed #444;
   border-radius: 8px;
@@ -431,53 +383,57 @@ input, select {
   font-size: 14px;
 }
 
-/* MOBILE */
+/* VIP BANNER */
+.vip-banner {
+  background: linear-gradient(90deg, #1a160c, #0a0a0a);
+  border: 1px solid var(--gold);
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
+/* MOBILE */
 @media(max-width: 700px) {
   header {
     padding: 15px 5%;
     flex-wrap: wrap;
   }
-
   nav {
     margin-top: 12px;
     width: 100%;
   }
-
   nav a {
     margin: 0 12px 0 0;
     font-size: 12px;
   }
-
   .hero {
     padding: 75px 6%;
     min-height: 420px;
   }
-
   .features,
   .steps {
     grid-template-columns: 1fr 1fr;
   }
-
   .section {
     padding: 50px 6%;
   }
 }
-
 @media(max-width: 420px) {
   .features,
   .steps {
     grid-template-columns: 1fr;
   }
-
   .brand-logo {
     font-size: 25px;
   }
-
   .brand-logo svg {
     width: 42px;
   }
-
   .btn-outline {
     margin: 12px 0 0;
   }
@@ -540,6 +496,16 @@ input, select {
     <h2>Featured <span class="gold">Profiles</span></h2>
     <p>Discover profiles from our community.</p>
   </div>
+
+  <!-- VIP BANNER -->
+  <div class="vip-banner">
+    <div>
+      <h3 style="color: var(--gold); font-family: Georgia, serif;">Want access to everyone?</h3>
+      <p style="font-size: 13px; color: #ccc;">Get unlimited access to all ladies' contact details for 30 days.</p>
+    </div>
+    <button class="btn" onclick="openVipModal()">Unlock All · K3000 / month</button>
+  </div>
+
   <div class="profiles" id="profileGrid">
     <!-- Javascript will inject profiles here -->
   </div>
@@ -578,8 +544,9 @@ input, select {
 <section class="section" id="join">
   <div class="section-heading">
     <h2>Join <span class="gold">ELITE</span></h2>
-    <p>Registration is FREE for ladies</p>
-    <button class="btn" onclick="openRegistration()">Register Your Profile</button>
+    <p><strong>Ladies Only:</strong> Registration is completely FREE.</p>
+    <p style="margin-top: 10px; font-size: 13px; color: #888;">(Men do not register. Men browse profiles and purchase contact access.)</p>
+    <button class="btn" onclick="openRegistration()" style="margin-top: 20px;">Register Your Profile (Ladies)</button>
   </div>
 </section>
 
@@ -614,7 +581,7 @@ input, select {
         <p><strong>MoMo Pay ID:</strong> 90571160</p>
         <p class="warning">Confirm the recipient name before sending money.</p>
       </div>
-      <button class="btn" onclick="showUploadForm()">Continue to Upload Screenshot</button>
+      <button class="btn" onclick="showUploadForm('unlockForm', 'paymentInstructions')">Continue to Upload Screenshot</button>
     </div>
 
     <form id="unlockForm" onsubmit="submitUnlock(event)" style="display: none;">
@@ -622,22 +589,48 @@ input, select {
       <input type="text" id="buyerRef" required placeholder="Enter transaction reference">
       <label>Upload Payment Screenshot</label>
       <input type="file" id="buyerPhoto" accept="image/*" required>
-      <p class="warning">Your request remains PENDING until an administrator verifies the payment. A screenshot alone does not unlock a contact.</p>
+      <p class="warning">Your request remains PENDING until an administrator verifies the payment.</p>
       <button class="btn" type="submit">Submit Access Request</button>
     </form>
-
-    <div id="unlockSuccess" style="display: none; margin-top: 15px; color: #25D366; font-weight: bold; text-align: center;">
-        Request submitted successfully. Please wait for admin approval.
-    </div>
   </div>
 </div>
 
-<!-- REGISTRATION MODAL (MODERN UPLOAD) -->
+<!-- VIP ACCESS MODAL (K3000) -->
+<div class="modal" id="vipModal">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal('vipModal')">&times;</button>
+    <h2>VIP Unlimited Access</h2>
+    <p>Get access to <strong>ALL</strong> ladies' contacts for 30 days.</p>
+    <p>Fee: <strong class="gold">K3000</strong></p>
+    
+    <div id="vipPaymentInstructions">
+      <div class="payment-box" style="margin-top: 15px;">
+        <p><strong>Payment Details:</strong></p>
+        <p><strong>Airtel Money:</strong> 0972154889</p>
+        <p><strong>Name:</strong> Mumba Sampa</p>
+        <p><strong>MoMo Pay ID:</strong> 90571160</p>
+      </div>
+      <button class="btn" onclick="showUploadForm('vipForm', 'vipPaymentInstructions')">Continue to Upload Screenshot</button>
+    </div>
+
+    <form id="vipForm" onsubmit="submitVip(event)" style="display: none;">
+      <label>Transaction reference</label>
+      <input type="text" id="vipRef" required placeholder="Enter transaction reference">
+      <label>Upload Payment Screenshot</label>
+      <input type="file" id="vipPhoto" accept="image/*" required>
+      <p class="warning">Admin will verify the K3000 and activate your 30-day VIP access.</p>
+      <button class="btn" type="submit">Submit VIP Request</button>
+    </form>
+  </div>
+</div>
+
+<!-- REGISTRATION MODAL (LADIES ONLY) -->
 <div class="modal" id="registrationModal">
   <div class="modal-content">
     <button class="close" onclick="closeModal('registrationModal')">&times;</button>
-    <h2>Become an ELITE Member</h2>
+    <h2>Ladies Registration</h2>
     <p>Profile registration is <strong class="gold">FREE</strong></p>
+    <p style="font-size:12px; color:#aaa; margin-bottom:15px;">Note: This form is strictly for ladies joining the platform. Men should browse and pay for access.</p>
 
     <form id="registerForm" onsubmit="submitRegistration(event)">
       <label>Full name</label>
@@ -662,7 +655,6 @@ input, select {
       <label>Telegram Username</label>
       <input type="text" id="regTelegram" required placeholder="@username">
 
-      <!-- MODERN UPLOAD BOX 1: PROFILE PHOTOS -->
       <label>Profile Photos (Select 2 to 5 photos)</label>
       <div class="upload-box" id="boxProfilePhotos">
         <input type="file" id="regPhotos" accept="image/*" multiple required>
@@ -670,7 +662,6 @@ input, select {
         <div class="upload-text" id="textProfilePhotos">Tap to upload your photos</div>
       </div>
 
-      <!-- MODERN UPLOAD BOX 2: VERIFICATION SELFIE -->
       <label>Verification Selfie (Unedited, No Filters)</label>
       <div class="upload-box" id="boxSelfie">
         <input type="file" id="regSelfie" accept="image/*" capture="user" required>
@@ -693,7 +684,10 @@ input, select {
 const BACKEND_URL = 'https://elite-flcq.onrender.com';
 let currentLadyName = "";
 let currentLadyId = "";
+// Store unlocked IDs
 let unlockedIds = JSON.parse(localStorage.getItem('elite_unlocked_ids') || '[]');
+// Store VIP access expiry timestamp
+let vipExpiry = parseInt(localStorage.getItem('elite_vip_expiry') || '0');
 
 // Check if URL has ?admin to show the private admin panel
 if (window.location.search.includes('admin')) {
@@ -735,8 +729,12 @@ async function loadProfiles() {
 
         notice.style.display = "none";
         
+        // Check if VIP is active (current time < expiry time)
+        const isVipActive = Date.now() < vipExpiry;
+        
         grid.innerHTML = ladies.map(lady => {
-            const isUnlocked = unlockedIds.includes(lady.id.toString());
+            // Unlocked if they paid for this specific lady OR they have active VIP
+            const isUnlocked = unlockedIds.includes(lady.id.toString()) || isVipActive;
             
             let actionHtml = "";
             if (isUnlocked) {
@@ -778,13 +776,19 @@ function openUnlock(id, name) {
     document.getElementById("unlockModal").style.display = "block";
     document.getElementById("paymentInstructions").style.display = "block";
     document.getElementById("unlockForm").style.display = "none";
-    document.getElementById("unlockSuccess").style.display = "none";
     document.getElementById("unlockForm").reset();
 }
 
-function showUploadForm() {
-    document.getElementById("paymentInstructions").style.display = "none";
-    document.getElementById("unlockForm").style.display = "block";
+function openVipModal() {
+    document.getElementById("vipModal").style.display = "block";
+    document.getElementById("vipPaymentInstructions").style.display = "block";
+    document.getElementById("vipForm").style.display = "none";
+    document.getElementById("vipForm").reset();
+}
+
+function showUploadForm(formId, instructionsId) {
+    document.getElementById(instructionsId).style.display = "none";
+    document.getElementById(formId).style.display = "block";
 }
 
 function openRegistration() {
@@ -804,12 +808,12 @@ function closeModal(id) {
     document.getElementById(id).style.display = "none";
 }
 
-// --- SUBMIT MEMBERSHIP (MEN) ---
+// --- SUBMIT MEMBERSHIP (MEN - SINGLE LADY) ---
 async function submitUnlock(event) {
     event.preventDefault();
     const formData = new FormData();
     
-    formData.append('name', `K750 Unlock for ${currentLadyName}`);
+    formData.append('name', `K750 Unlock for ${currentLadyName} (ID:${currentLadyId})`);
     formData.append('type', 'Membership');
     formData.append('profile', currentLadyName);
     formData.append('amount', 750);
@@ -827,7 +831,8 @@ async function submitUnlock(event) {
         
         if (response.ok) {
             document.getElementById("unlockForm").style.display = "none";
-            document.getElementById("unlockSuccess").style.display = "block";
+            alert("Request submitted successfully. Pending admin approval.");
+            closeModal('unlockModal');
         } else {
             alert("Error submitting. Please try again.");
         }
@@ -836,7 +841,40 @@ async function submitUnlock(event) {
     }
 }
 
-// --- SUBMIT REGISTRATION (LADIES) WITH MULTIPLE PHOTOS ---
+// --- SUBMIT VIP MEMBERSHIP (MEN - ALL LADIES) ---
+async function submitVip(event) {
+    event.preventDefault();
+    const formData = new FormData();
+    
+    formData.append('name', `K3000 VIP Monthly Access`);
+    formData.append('type', 'VIP Membership');
+    formData.append('profile', 'All Profiles Access');
+    formData.append('amount', 3000);
+    formData.append('network', 'Airtel');
+    formData.append('ref', document.getElementById('vipRef').value);
+    
+    const photo = document.getElementById('vipPhoto').files[0];
+    if (photo) formData.append('proof', photo);
+
+    try {
+        const response = await fetch(`${BACKEND_URL}/api/payments`, {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (response.ok) {
+            document.getElementById("vipForm").style.display = "none";
+            alert("VIP Request submitted successfully. Pending admin approval.");
+            closeModal('vipModal');
+        } else {
+            alert("Error submitting. Please try again.");
+        }
+    } catch (error) {
+        alert("Network error. Please check your connection.");
+    }
+}
+
+// --- SUBMIT REGISTRATION (LADIES) ---
 async function submitRegistration(event) {
     event.preventDefault();
     
@@ -856,14 +894,11 @@ async function submitRegistration(event) {
     formData.append('reference', document.getElementById('regWhatsApp').value);
     formData.append('network', document.getElementById('regTelegram').value);
     
-    // Append all photos
     for (let i = 0; i < photos.length; i++) {
         formData.append('photos', photos[i]);
     }
-    // Append the verification selfie
     formData.append('selfie', selfie);
 
-    // Change button text to show loading
     const btn = event.target.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
     btn.textContent = "Uploading Photos...";
@@ -905,7 +940,7 @@ function promptAdmin() {
             <a href="/" style="color:white;text-decoration:none;">&larr; Back to Site</a>
         </header>
         <div style="padding:40px 7%;">
-            <h2 style="color:var(--gold);margin-bottom:20px;">Pending Approvals</h2>
+            <h2 style="color:var(--gold);margin-bottom:20px;">All System Data</h2>
             <div id="adminList" style="display:grid;gap:15px;"></div>
         </div>
     `;
@@ -913,16 +948,20 @@ function promptAdmin() {
     fetch(`${BACKEND_URL}/api/payments`)
       .then(res => res.json())
       .then(data => {
-        const pending = data.filter(d => d.status === 'Pending');
         const list = document.getElementById("adminList");
         
-        if (pending.length === 0) {
-          list.innerHTML = "<p>No pending requests right now.</p>";
+        if (data.length === 0) {
+          list.innerHTML = "<p>No records found.</p>";
           return;
         }
         
-        list.innerHTML = pending.map(item => {
-          const type = item.type === 'Membership' ? 'K750 Unlock' : 'Lady Registration';
+        list.innerHTML = data.map(item => {
+          let type = item.type;
+          let badgeColor = '#555';
+          if (type === 'VIP Membership') badgeColor = '#d4af37'; // Gold
+          if (type === 'Membership') badgeColor = '#0088cc'; // Blue
+          if (type === 'Lady Registration') badgeColor = '#25D366'; // Green
+
           let extraInfo = "";
           if(item.type === 'Lady Registration') {
              extraInfo = `<p>WhatsApp: ${item.reference} | Telegram: ${item.network}</p>`;
@@ -931,14 +970,20 @@ function promptAdmin() {
           return `
             <div style="border:1px solid #444; padding:15px; border-radius:5px; background:#151515;">
                 <h3 style="margin-bottom:10px; color:var(--gold);">${item.name}</h3>
-                <p>Type: ${type}</p>
-                <p>City: ${item.profile}</p>
+                <span style="background:${badgeColor}; color:#fff; padding:3px 8px; border-radius:3px; font-size:12px; font-weight:bold;">${type}</span>
+                <p style="margin-top:10px;">Location/Details: ${item.profile}</p>
                 ${extraInfo}
                 <p>Ref: ${item.reference}</p>
-                ${item.image_url ? `<p><a href="${item.image_url}" target="_blank" style="color:#d4af37; font-weight:bold;">View Payment Proof / Photo &rarr;</a></p>` : ''}
-                <div style="margin-top:15px; display:flex; gap:10px;">
-                    <button onclick="approve(${item.id})" style="background:#25D366;color:white;padding:10px 20px;border:none;border-radius:3px;font-weight:bold;cursor:pointer;">Approve</button>
-                    <button onclick="reject(${item.id})" style="background:#e74c3c;color:white;padding:10px 20px;border:none;border-radius:3px;font-weight:bold;cursor:pointer;">Reject</button>
+                <p>Status: <strong style="color:${item.status === 'Approved' ? '#25D366' : (item.status === 'Rejected' ? 'red' : 'orange')}">${item.status}</strong></p>
+                ${item.image_url ? `<p><a href="${item.image_url}" target="_blank" style="color:#d4af37; font-weight:bold;">View Proof / Photo &rarr;</a></p>` : ''}
+                
+                <div style="margin-top:15px; display:flex; gap:10px; flex-wrap:wrap;">
+                    ${item.status === 'Pending' ? `
+                        <button onclick="approve(${item.id})" style="background:#25D366;color:white;padding:10px 20px;border:none;border-radius:3px;font-weight:bold;cursor:pointer;">Approve</button>
+                        <button onclick="reject(${item.id})" style="background:#e74c3c;color:white;padding:10px 20px;border:none;border-radius:3px;font-weight:bold;cursor:pointer;">Reject</button>
+                    ` : ''}
+                    <!-- Delete Button to remove errors -->
+                    <button onclick="deleteRecord(${item.id})" style="background:#444;color:white;padding:10px 20px;border:none;border-radius:3px;font-weight:bold;cursor:pointer;">Delete Permanently</button>
                 </div>
             </div>
           `;
@@ -947,12 +992,39 @@ function promptAdmin() {
 }
 
 async function approve(id) {
+    // 1. Send approval to backend
     await fetch(`${BACKEND_URL}/api/payments/${id}/status`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status: 'Approved' })
     });
-    alert("Approved! Client will see the contact links on their next visit.");
+
+    // 2. We need to figure out what was approved to unlock it for the buyer on THIS device (Simulating login)
+    // Note: In a real app, this happens on the buyer's device. Since we don't have logins yet, 
+    // we handle the local unlock logic here so you can test it.
+    const data = await fetch(`${BACKEND_URL}/api/payments`).then(r=>r.json());
+    const item = data.find(i => i.id === id);
+
+    if(item) {
+        if (item.type === 'VIP Membership') {
+            // Set VIP expiry to 30 days from now
+            const expiry = Date.now() + (30 * 24 * 60 * 60 * 1000);
+            localStorage.setItem('elite_vip_expiry', expiry);
+        } else if (item.type === 'Membership') {
+            // Extract the Lady ID from the name string we formatted "K750 Unlock for Name (ID:123)"
+            const match = item.name.match(/ID:(\d+)/);
+            if (match && match[1]) {
+                const ladyId = match[1];
+                let unlocked = JSON.parse(localStorage.getItem('elite_unlocked_ids') || '[]');
+                if (!unlocked.includes(ladyId)) {
+                    unlocked.push(ladyId);
+                    localStorage.setItem('elite_unlocked_ids', JSON.stringify(unlocked));
+                }
+            }
+        }
+    }
+
+    alert("Approved successfully! Client access updated.");
     window.location.reload();
 }
 
@@ -964,6 +1036,21 @@ async function reject(id) {
     });
     alert("Rejected!");
     window.location.reload();
+}
+
+async function deleteRecord(id) {
+    if(!confirm("Are you sure? This will permanently delete this record from the database.")) return;
+    
+    try {
+        // Send delete request to backend
+        await fetch(`${BACKEND_URL}/api/payments/${id}`, {
+            method: 'DELETE'
+        });
+        alert("Record deleted.");
+        window.location.reload();
+    } catch (err) {
+        alert("Error deleting record.");
+    }
 }
 
 window.onclick = function(event) {
